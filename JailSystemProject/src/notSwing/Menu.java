@@ -30,7 +30,6 @@ public class Menu {
         System.out.println("4) Export / Import");
         System.out.println("5) Mail");
         System.out.println("0) Exit");
-		
 	}
 	
 	public void runMenu() {
