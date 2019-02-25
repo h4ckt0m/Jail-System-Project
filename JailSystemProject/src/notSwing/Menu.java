@@ -28,7 +28,7 @@ public class Menu {
         System.out.println("2) Searching");
         System.out.println("3) Stats");
         System.out.println("4) Export / Import");
-        System.out.println("5) Mail");
+        System.out.println("5) Mail xd");
         System.out.println("0) Exit");
 		
 	}
