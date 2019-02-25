@@ -25,7 +25,7 @@ public class Menu {
 	private void printMenu() {
 		System.out.println("\nPlease make a selection");
 		System.out.println("1) Register Management");
-        System.out.println("2) Searching546541654");
+        System.out.println("2) Searching");
         System.out.println("3) Stats");
         System.out.println("4) Export / Import");
         System.out.println("5) Mail");
