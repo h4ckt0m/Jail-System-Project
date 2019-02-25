@@ -1,6 +1,15 @@
 package notSwing;
 
 import java.util.Scanner;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+
+
 
 public class Menu {
 	
@@ -41,6 +50,40 @@ public class Menu {
 		}
 	}
 	
+	public void JSON_Reader() {
+		JSONParser parser = new JSONParser();
+		try
+        {
+            Object object = parser.parse(new FileReader("C:\\Users\\Admin\\Desktop\\Eclipse Workspace\\JSP_Local\\src\\notSwing\\users.json"));
+            
+            //convert Object to JSONObject
+            JSONObject jsonObject = (JSONObject)object;
+            
+            //Reading the String
+            String id_func = (String) jsonObject.get("Id_func");
+            String password = (String) jsonObject.get("Password");
+            boolean poweruser = (boolean) jsonObject.get("PowerUser");
+            
+            //Printing all the values
+            System.out.println("Id_func: " + id_func);
+            System.out.println("PowerUser: " + poweruser);
+            System.out.println("Password:" + password);
+            
+        }
+        catch(FileNotFoundException fe)
+        {
+            fe.printStackTrace();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+	}
+	
+	public void login() {
+		
+	}
+	
 	private int getInput() {
 		Scanner sc = new Scanner(System.in);
 		int choice = -1;
@@ -58,38 +101,6 @@ public class Menu {
 	}
 	
 	
-	private int getUser() { //JSON User
-		Scanner sc = new Scanner(System.in);
-		int user = -1;
-		while (choice < 0 || choice > 5) {
-			try {
-				System.out.println("\n  ");
-				choice = Integer.parseInt(sc.nextLine());
-				
-			}catch(NumberFormatException e){
-				System.out.println("");
-				
-			}
-		}
-		return user;
-	}
-	
-	
-	private int getPassword() { //JSON Pass
-		Scanner sc = new Scanner(System.in);
-		int password = -1;
-		while (choice < 0 || choice > 5) {
-			try {
-				System.out.println("\nEnter your choice:  ");
-				choice = Integer.parseInt(sc.nextLine());
-				
-			}catch(NumberFormatException e){
-				System.out.println("Invalid selection. Please try again.");
-				
-			}
-		}
-		return password;
-	}
 	
 	private void performAction(int choice) {
 		switch(choice){
