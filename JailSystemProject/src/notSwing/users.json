@@ -4,33 +4,33 @@
 		{
 			"Id_func" : "m143",
 			"PowerUser": "True",
-			"Password": "1574",
+			"Password": "1574"
 
 		},
 		{
 			"Id_func" : "d626",
 			"PowerUser": "True",
-			"Password": "2594",
+			"Password": "2594"
 		},
 		{
 			"Id_func" : "m102",
 			"PowerUser": "False",
-			"Password": "6472",
+			"Password": "6472"
 		},
 		{
 			"Id_func" : "c384",
 			"PowerUser": "False",
-			"Password": "6143",
+			"Password": "6143"
 		},
 		{
 			"Id_func" : "g209",
 			"PowerUser": "False",
-			"Password": "3492",
+			"Password": "3492"
 		},
 		{
 			"Id_func" : "t175",
 			"PowerUser": "False",
-			"Password": "0437",
+			"Password": "0437"
 		}
 	]
 }
