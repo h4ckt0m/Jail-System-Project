@@ -23,19 +23,14 @@ public class Menu {
 	}
 
 	private void log_menu_eng() {
-		Scanner sceng = new Scanner(System.in);
+
 		System.out.println("+-----------------------------------+");
 		System.out.println("|       Welcome,please log in       |");
 		System.out.println("|          into the system          |");
 		System.out.println("+-----------------------------------+");
-		System.out.println("\nInsert user: ");
-		String us = sceng.nextLine();
-		System.out.println("\nInsert password: ");
-		String passw = sceng.nextLine();
-		
-		
+
 	}
-	
+
 	private void log_menu_esp() {
 		Scanner scesp = new Scanner(System.in);
 		System.out.println("+-----------------------------------+");
@@ -48,82 +43,94 @@ public class Menu {
 		String passw = scesp.nextLine();
 	}
 
-	private void printHeader() {
+	private void printHeadereng() {
 		System.out.println("+-----------------------------------+");
 		System.out.println("|       Welcome to Jail System      |");
 		System.out.println("|        Security Project App       |");
 		System.out.println("+-----------------------------------+");
 	}
 
-	private void printMenu() {
-		System.out.println("\nPlease make a selection");
-		System.out.println("1) Register Management");
-		System.out.println("2) Searching");
-		System.out.println("3) Stats");
-		System.out.println("4) Export / Import");
-		System.out.println("5) Mail");
-		System.out.println("0) Exit");
+	private void printHeaderesp() {
+		System.out.println("+-----------------------------------+");
+		System.out.println("|       Bienvenido a Jail System    |");
+		System.out.println("|        Security Project App       |");
+		System.out.println("+-----------------------------------+");
 	}
 
+	private void printMenu() {
+		System.out.println("\nPlease make a selection: ");
+		System.out.println("\n1) Register Management");
+		System.out.println("\n0) Exit");
+	}
+
+	private void printMenuPower() {
+		System.out.println("\nPlease make a selection: ");
+		System.out.println("\n1) Register Management");
+		System.out.println("\n2) Stats");
+		System.out.println("\n3) Export");
+		System.out.println("\n4) Import");
+		System.out.println("\n5) Report by email");
+		System.out.println("\n0) Exit");
+	}
+
+//Ejecucion principal programa
 	public void runMenu() {
-		select_language();
-		printHeader();
-		while (!exit) {
-			printMenu();
-			int choice = getInput();
-			performAction(choice);
+		log_menu_eng();
+		int ret = -1;
+		while (ret == -1) {
+			ret = login();
+			if (ret == 1) {
+				printHeadereng();
+				while (!exit) {
+					printMenuPower();
+					int choice = getInput();
+					performAction(choice);
+				}
+
+			} else if (ret == 0) {
+				printHeadereng();
+				while (!exit) {
+					printMenu();
+					int choice = getInput();
+					performAction(choice);
+				}
+			}
 		}
 	}
 
-	public void select_language() {
-		Scanner sclang = new Scanner(System.in);
-		System.out.println("Seleccione su idioma / Select your language: 1.Español  2.English ");
-		System.out.println("\n");
-		
-		int opt = sclang.nextInt();
-		try {
-			if (opt == 1) {
-				System.out.println("Ha seleccionado el idioma español");
-				System.out.println("\n");
-				log_menu_esp();
-			}else {
-				System.out.println("You have selected the english language");
-				log_menu_eng();
-			}
-		} catch(Exception e){
-			System.out.println("Error escriba la opcion de nuevo / Error write the option again");
-			
-		}	
-	}
-	
-
-	public void JSON_Reader() {
+	public int login() {
 		JSONParser parser = new JSONParser();
+
 		try {
-			Object object = parser.parse(new FileReader(
-					"C:\\Users\\Admin\\Desktop\\Eclipse Workspace\\JSP_Local\\src\\notSwing\\users.json"));
 
-			// convert Object to JSONObject
-			JSONObject jsonObject = (JSONObject) object;
+			Object obj = parser.parse(new FileReader("src/notSwing/users.json"));
 
-			// Reading the String
-			String id_func = (String) jsonObject.get("Id_func");
-			String password = (String) jsonObject.get("Password");
-			boolean poweruser = (boolean) jsonObject.get("PowerUser");
+			JSONObject jsonObject = (JSONObject) obj;
+			Scanner sceng = new Scanner(System.in);
+			System.out.println("\nInsert user: ");
+			String us = sceng.nextLine();
+			if (jsonObject.containsKey(us)) {
+				JSONObject obj2 = (JSONObject) jsonObject.get(us);
+				System.out.println("\nInsert password: ");
+				String passw = sceng.nextLine();
+				String passtest = (String) obj2.get("Password");
+				String power = (String) obj2.get("PowerUser");
+				if (passtest.equals(passw) && power.equals("True")) {
+					System.out.println("\nCorrect Login");
 
-			// Printing all the values
-			System.out.println("Id_func: " + id_func);
-			System.out.println("PowerUser: " + poweruser);
-			System.out.println("Password:" + password);
+					return 1;
+				} else if (passtest.equals(passw) && power.equals("False")) {
+					System.out.println("\nCorrect Login");
 
-		} catch (FileNotFoundException fe) {
-			fe.printStackTrace();
+					return 0;
+				}
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public void login() {
+		System.out.println("\nError login try again");
+		return -1;
 
 	}
 
