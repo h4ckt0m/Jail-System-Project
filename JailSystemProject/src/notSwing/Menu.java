@@ -155,31 +155,31 @@ public class Menu {
 
 		case 0:
 			exit = true;
-			System.out.println("Thank you for using our application.");
+			System.out.println("\nThank you for using our application.");
 			break;
 
 		case 1:
-			System.out.println("Option 1 Selected");
+			System.out.println("\nOption 1 Selected");
 			break;
 
 		case 2:
-			System.out.println("Option 2 Selected");
+			System.out.println("\nOption 2 Selected");
 			break;
 
 		case 3:
-			System.out.println("Option 3 Selected");
+			System.out.println("\nOption 3 Selected");
 			break;
 
 		case 4:
-			System.out.println("Option 4 Selected");
+			System.out.println("\nOption 4 Selected");
 			break;
 
 		case 5:
-			System.out.println("Option 5 Selected");
+			System.out.println("\nOption 5 Selected");
 			break;
 
 		default:
-			System.out.println("An unknown error has ocurred.");
+			System.out.println("\nAn unknown error has ocurred.");
 			break;
 		}
 
