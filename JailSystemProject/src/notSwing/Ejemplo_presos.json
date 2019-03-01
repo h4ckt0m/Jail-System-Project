@@ -12,7 +12,7 @@
       "Nivel_de_amenaza": "2",
       "Num_de_celda": "2049",
       "Crimen": "Posesion de armas sin licencia",
-      "Tiempo_condena": "002,03,15",
+      "Tiempo_condena": "002, 03, 15",
       "Ingreso": "14/06/2018",
       "Visitas": 1,
       "Llamadas": 1
@@ -48,7 +48,7 @@
       "Nivel_de_amenaza": "3",
       "Num_de_celda": "1022",
       "Crimen": "Trafico de drogas",
-      "Tiempo_condena)": "006, 11, 05",
+      "Tiempo_condena": "006, 11, 05",
       "Ingreso": "02/01/2019",
       "Visitas": 0,
       "Llamadas": 1
