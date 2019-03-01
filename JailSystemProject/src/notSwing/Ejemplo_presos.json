@@ -14,8 +14,8 @@
       "Crimen": "Posesion de armas sin licencia",
       "Tiempo_condena": "002,03,15",
       "Ingreso": "14/06/2018",
-      "Visitas": "1",
-      "Llamadas": "1"
+      "Visitas": 1,
+      "Llamadas": 1
     },
    "623": {
       "DNI": "23651802-R",
@@ -32,8 +32,8 @@
       "Crimen": "crimen organizado",
       "Tiempo_condena": "004, 2, 30",
       "Ingreso": "25/09/2016",
-      "Visitas": "1",
-      "Llamadas": "1"
+      "Visitas": 1,
+      "Llamadas": 1
     },
     "241":{
       "DNI": "89541728-I",
@@ -50,8 +50,8 @@
       "Crimen": "Trafico de drogas",
       "Tiempo_condena)": "006, 11, 05",
       "Ingreso": "02/01/2019",
-      "Visitas": "0",
-      "Llamadas": "1"
+      "Visitas": 0,
+      "Llamadas": 1
     },
     "581":{
       "DNI": "82541594-N",
@@ -68,8 +68,8 @@
       "Crimen": "Homicidio imprudente",
       "Tiempo_condena": "002, 09, 00",
       "Ingreso": "30/08/2017",
-      "Visitas": "1",
-      "Llamadas": "1"
+      "Visitas": 1,
+      "Llamadas": 1
     }
   
 }
