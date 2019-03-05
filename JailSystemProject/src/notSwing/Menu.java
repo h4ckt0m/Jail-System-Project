@@ -72,6 +72,16 @@ public class Menu {
 		System.out.println("\n5) Report by email");
 		System.out.println("\n0) Exit");
 	}
+	
+	private void printMenuRegister() {
+		System.out.println("\nPlease select an option: ");
+		System.out.println("\n1) Create a new register of a prisoner");
+		System.out.println("\n2) Read info of a prisoner");
+		System.out.println("\n3) Update the info of a prisoner");
+		System.out.println("\n4) Delete a register of a prisoner");
+		System.out.println("\n5) Modify a register of a prisioner");
+		System.out.println("\n0) Go back");
+	}
 
 //Ejecucion principal programa
 	public void runMenu() {
