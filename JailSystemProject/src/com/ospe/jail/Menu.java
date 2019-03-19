@@ -5,16 +5,23 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
+import java.io.FileWriter;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import Prisoner.java;
+
+
 public class Menu {
 
 	boolean exit;
-
+	static Prisoner p = new Prisoner();
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Menu menu = new Menu();
@@ -170,18 +177,22 @@ public class Menu {
 
 		case 1:
 			System.out.println("\nOption 1 Selected");
+			p.newPrisoner();
 			break;
 
 		case 2:
 			System.out.println("\nOption 2 Selected");
+			p.prisonerReader();
 			break;
 
 		case 3:
 			System.out.println("\nOption 3 Selected");
+			p.prisonerEditor();
 			break;
 
 		case 4:
 			System.out.println("\nOption 4 Selected");
+			p.prisonerDeleter();
 			break;
 
 		case 5:
