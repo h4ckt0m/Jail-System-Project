@@ -69,7 +69,7 @@
       "Nivel_de_amenaza": "2",
       "Num_de_celda": "2063",
       "Crimen": "Intento de asesinato",
-      "Tiempo_condena": "008, 8, 12",
+      "Tiempo_condena": "008, 08, 12",
       "Ingreso": "16/10/2014",
       "Visitas": 1,
       "Llamadas": 1
@@ -202,7 +202,7 @@
       "Nivel_de_amenaza": "1",
       "Num_de_celda": "2123",
       "Crimen": "Homicidio involuntario",
-      "Tiempo_condena": "002, 2, 10",
+      "Tiempo_condena": "002, 02, 10",
       "Ingreso": "08/07/2018",
       "Visitas": 1,
       "Llamadas": 1
@@ -278,7 +278,7 @@
       "Nivel_de_amenaza": "1",
       "Num_de_celda": "3001",
       "Crimen": "Homicidio",
-      "Tiempo_condena": "006, 2, 20",
+      "Tiempo_condena": "006, 02, 20",
       "Ingreso": "08/12/2015",
       "Visitas": 1,
       "Llamadas": 1
@@ -316,7 +316,7 @@
       "Nivel_de_amenaza": "1",
       "Num_de_celda": "4110",
       "Crimen": "crimen organizado",
-      "Tiempo_condena": "004, 2, 30",
+      "Tiempo_condena": "004, 02, 30",
       "Ingreso": "25/09/2016",
       "Visitas": 1,
       "Llamadas": 1
