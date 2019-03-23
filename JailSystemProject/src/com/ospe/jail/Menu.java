@@ -12,10 +12,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import Prisoner.java;
+//imports de testing
+/*import Prisoner.java;
 import test.Menu;
 import test.Person;
-import test.Prisoner;
+import test.Prisoner;*/
 
 
 public class Menu extends Person {
@@ -49,7 +50,7 @@ public class Menu extends Person {
 		System.out.println("+-----------------------------------+");
 		System.out.println("\nIntroduzca el usuario: ");
 		String us = scesp.nextLine();
-		System.out.println("\nInserte la contraseña: ");
+		System.out.println("\nInserte la contraseÃ±a: ");
 		String passw = scesp.nextLine();
 	}
 
