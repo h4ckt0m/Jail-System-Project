@@ -13,13 +13,16 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import Prisoner.java;
+import test.Menu;
+import test.Person;
+import test.Prisoner;
 
 
-public class Menu {
+public class Menu extends Person {
 
 	boolean exit;
 	static Prisoner p = new Prisoner();
-	
+	boolean power = false;
 	
 	
 	public static void main(String[] args) {
@@ -86,7 +89,6 @@ public class Menu {
 		System.out.println("\n2) Read info of a prisoner");
 		System.out.println("\n3) Update the info of a prisoner");
 		System.out.println("\n4) Delete a register of a prisoner");
-		System.out.println("\n5) Modify a register of a prisioner");
 		System.out.println("\n0) Go back");
 	}
 
@@ -98,6 +100,7 @@ public class Menu {
 			ret = login();
 			if (ret == 1) {
 				printHeadereng();
+				power = true;
 				while (!exit) {
 					printMenuPower();
 					int choice = getInput();
@@ -106,6 +109,7 @@ public class Menu {
 
 			} else if (ret == 0) {
 				printHeadereng();
+				power = false;
 				while (!exit) {
 					printMenu();
 					int choice = getInput();
@@ -120,7 +124,7 @@ public class Menu {
 
 		try {
 
-			Object obj = parser.parse(new FileReader("src/notSwing/users.json"));
+			Object obj = parser.parse(new FileReader("src/test/users.json"));
 
 			JSONObject jsonObject = (JSONObject) obj;
 			Scanner sceng = new Scanner(System.in);
@@ -177,22 +181,67 @@ public class Menu {
 
 		case 1:
 			System.out.println("\nOption 1 Selected");
-			p.newPrisoner();
+			while (!exit) {
+				printMenuRegister();
+				System.out.println("\nEnter your choice: ");
+				Scanner optm1 = new Scanner(System.in);
+				int opcion = optm1.nextInt();
+				switch(opcion) {
+			
+				case 0:
+					
+					if (power == true) {
+						printHeadereng();
+						while (!exit) {
+							printMenuPower();
+							int choice2 = getInput();
+							performAction(choice2);
+						}
+
+					} else if (power == false) {
+						printHeadereng();
+						while (!exit) {
+							printMenu();
+							int choice2 = getInput();
+							performAction(choice2);
+						}
+					}
+					break;
+
+				case 1:
+					p.newPrisoner();
+					break;
+
+				case 2:
+					p.prisonerReader();
+					break;
+
+				case 3:
+					p.prisonerEditor();
+					break;
+
+				case 4:
+					p.prisonerDeleter();
+					break;
+
+				default:
+					System.out.println("\nAn unknown error has ocurred");
+
+				}
+
+			}
 			break;
 
 		case 2:
 			System.out.println("\nOption 2 Selected");
-			p.prisonerReader();
 			break;
 
 		case 3:
 			System.out.println("\nOption 3 Selected");
-			p.prisonerEditor();
 			break;
 
 		case 4:
 			System.out.println("\nOption 4 Selected");
-			p.prisonerDeleter();
 			break;
 
 		case 5:
@@ -206,3 +255,4 @@ public class Menu {
 
 	}
 }
+
