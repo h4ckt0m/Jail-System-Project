@@ -1,4 +1,4 @@
-package notSwing;
+package com.ospe.jail;
 
 public class Person {
 
@@ -8,18 +8,18 @@ public class Person {
 	protected String f_nac;
 	protected String nacionalidad;
 	protected String sexo;
-	protected float altura;
-	protected float peso;
-	
-	//Constructors
-	
+	protected int altura;
+	protected double peso;
+
+	// Constructors
+
 	public Person() {
-		
+
 	}
-	
-	public Person(String nombre,String apellidos,String DNI,String f_nac, String nacionalidad,String sexo,
-	float altura,float peso) {
-		
+
+	public Person(String nombre, String apellidos, String DNI, String f_nac, String nacionalidad, String sexo,
+			int altura, double peso) {
+
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.DNI = DNI;
@@ -28,10 +28,10 @@ public class Person {
 		this.sexo = sexo;
 		this.altura = altura;
 		this.peso = peso;
-		
+
 	}
-	
-	//Getters and Setters
+
+	// Getters and Setters
 
 	public String getNombre() {
 		return nombre;
@@ -81,25 +81,19 @@ public class Person {
 		this.sexo = sexo;
 	}
 
-	public float getAltura() {
+	public int getAltura() {
 		return altura;
 	}
 
-	public void setAltura(float altura) {
+	public void setAltura(int altura) {
 		this.altura = altura;
 	}
 
-	public float getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(float peso) {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	
-	
-	
-	
-	
-	
 }
