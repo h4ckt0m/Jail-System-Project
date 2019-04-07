@@ -96,7 +96,7 @@
 		"apellidos": "Ramirez Lozano",
 		"DNI": "59698769-S",
 		"f_nac": "31/03/1992",
-		"nacionalidad": "Colombians",
+		"nacionalidad": "Colombian",
 		"sexo": "h",
 		"altura": 169,
 		"peso": 64.3
@@ -113,7 +113,7 @@
 		"apellidos": "Ramos Santos",
 		"DNI": "35709410-R",
 		"f_nac": "23/07/1998",
-		"nacionalidad": "Chileans",
+		"nacionalidad": "Chilean",
 		"sexo": "m",
 		"altura": 177,
 		"peso": 63.5
@@ -147,7 +147,7 @@
 		"apellidos": "Cortejas Hernan",
 		"DNI": "63031152-C",
 		"f_nac": "02/05/1960",
-		"nacionalidad": "Dominicans",
+		"nacionalidad": "Dominican",
 		"sexo": "h",
 		"altura": 194,
 		"peso": 86.4
