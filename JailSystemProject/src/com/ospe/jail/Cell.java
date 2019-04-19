@@ -6,10 +6,8 @@ public class Cell {
 	protected int cap_actual;
 	protected int cap_maxima;
 	protected boolean llena;
-	protected String localizacion;
 	protected boolean estado_puerta;
 	protected String numero_celda;
-	protected int numero_pabellon;
 	protected int nivel_seguridad;
 	protected String tipo_celda;
 	protected int piso;
@@ -21,16 +19,14 @@ public class Cell {
 		
 	}
 	
-	public Cell(int cap_actual,int cap_maxima,boolean llena,String localizacion,boolean estado_puerta,
-			String numero_celda,int numero_pabellon, int nivel_seguridad,String tipo_celda,int piso) {
+	public Cell(int cap_actual,int cap_maxima,boolean llena,boolean estado_puerta,
+			String numero_celda, int nivel_seguridad,String tipo_celda,int piso) {
 		
 		this.cap_actual = cap_actual;
 		this.cap_maxima = cap_maxima;
 		this.llena = llena;
-		this.localizacion = localizacion;
 		this.estado_puerta = estado_puerta;
 		this.numero_celda = numero_celda;
-		this.numero_pabellon = numero_pabellon;
 		this.nivel_seguridad = nivel_seguridad;
 		this.tipo_celda = tipo_celda;
 		this.piso = piso;
@@ -63,14 +59,6 @@ public class Cell {
 		this.llena = llena;
 	}
 
-	public String getLocalizacion() {
-		return localizacion;
-	}
-
-	public void setLocalizacion(String localizacion) {
-		this.localizacion = localizacion;
-	}
-
 	public boolean isEstado_puerta() {
 		return estado_puerta;
 	}
@@ -85,14 +73,6 @@ public class Cell {
 
 	public void setNumero_celda(String numero_celda) {
 		this.numero_celda = numero_celda;
-	}
-
-	public int getNumero_pabellon() {
-		return numero_pabellon;
-	}
-
-	public void setNumero_pabellon(int numero_pabellon) {
-		this.numero_pabellon = numero_pabellon;
 	}
 
 	public int getNivel_seguridad() {

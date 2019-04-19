@@ -55,8 +55,8 @@
   },
   "153": {
     "num_preso": 153,
-    "niv_amenaza": 2,
-    "num_celda": 1102,
+    "niv_amenaza": 1,
+    "num_celda": 1012,
     "condena": "008, 08, 12",
     "crimen": "Intento de asesinato",
     "ingreso": "16/10/2014",
