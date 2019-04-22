@@ -76,7 +76,7 @@ public class CivilServant extends Person implements Serializable{
 				+ "\nFecha de nacimiento (día/mes/año): " + f_nac + "\nNacionalidad: " + nacionalidad + "\nSexo (h/m): "
 				+ sexo + "\nAltura (cm): " + altura + "\nPeso (kg): " + peso + "\nCargo: " + cargo
 				+ "\nId_Funcionario: " + id_funcionario + "\nSueldo: " + sueldo + "\nPabellon Asignado: " + pavilion_func
-				+ "\nTurno: " + turno;
+				+ "\nTurno: " + turno + "\n\n";
 		
 		return s;
 	}
@@ -86,7 +86,7 @@ public class CivilServant extends Person implements Serializable{
                 + i + f_nac + i + nacionalidad + i
                 + sexo + i + altura + i + peso + i + cargo
                 + i + id_funcionario + i + sueldo + i + pavilion_func
-                + i + turno;
+                + i + turno + "\n";
         return s;
     }
 	

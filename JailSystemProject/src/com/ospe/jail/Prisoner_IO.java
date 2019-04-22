@@ -2,15 +2,15 @@ package com.ospe.jail;
 
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Prisoner_IO {
-
-	static Scanner read = new Scanner(System.in);
+	Scanner read = new Scanner(System.in);
+	DecimalFormat numberFormat = new DecimalFormat("#.##");
 	public static final int YEAR = 2019;
-	
-	
+
 	public void leer(HashMap<Integer, Prisoner> Prisoners) {
 		System.out.println("\nInsert prisoner number: ");
 		int id = read.nextInt();
@@ -22,15 +22,10 @@ public class Prisoner_IO {
 		}
 
 	}
-	
-	public void leerListado(HashMap<Integer, Prisoner> Prisoners) {
-        for (Prisoner p : Prisoners.values()) {
-            System.out.print(p.getNum_preso() + ", " + p.getNombre() + " " + p.getApellidos() + "\n");
-        }
-    }
 
-	public void crear(HashMap<Integer, Prisoner> Prisoners) {
+	public void crear(HashMap<Integer, Prisoner> Prisoners, HashMap<Integer, Cell> cells) {
 		Prisoner p = new Prisoner();
+		int cellId = 0;
 		System.out.println("\nInsert new prisoner DNI: ");
 		p.setDNI(read.nextLine());
 
@@ -62,9 +57,21 @@ public class Prisoner_IO {
 		p.setNiv_amenaza(read.nextInt());
 
 		System.out.println("\nInsert new prisoner cell number: ");
-		p.setNum_celda(read.nextInt());
+		int x = 0;
+		while (x == 0) {
+			cellId = read.nextInt();
+			if (cells.containsKey(cellId)) {
+				if (cells.get(cellId).isLlena()) {
+					System.out.println("\nThis cell is full.Introduce a valid cell number: ");
+				} else {
+					p.setCelda(cells.get(cellId));
+					x = 1;
+				}
+			} else {
+				System.out.println("\nThat cell does not exist. Introduce a valid cell number: ");
+			}
+		}
 		read.nextLine();
-
 		System.out.println("\nInsert new prisoner crime description: ");
 		p.setCrimen(read.nextLine());
 
@@ -87,16 +94,18 @@ public class Prisoner_IO {
 		} else {
 			p.setLlamadas(false);
 		}
-
+		cells.get(cellId).getPresos().add(p);
+		cells.get(cellId).setCap_actual();
+		cells.get(cellId).setLlena();
+		cells.get(cellId).getPabellon().setNum_presos();
 		Prisoners.put(p.getNum_preso(), p);
 	}
 
-	public void editar(HashMap<Integer, Prisoner> Prisoners) {
-		Prisoner p = new Prisoner();
+	public void editar(HashMap<Integer, Prisoner> Prisoners, HashMap<Integer, Cell> cells) {
 		System.out.println("\nInsert number of the prisoner you want to edit: ");
 		int id = read.nextInt();
 		if (Prisoners.containsKey(id)) {
-			p = Prisoners.get(id);
+			Prisoner p = Prisoners.get(id);
 			System.out.println("\nWhich field would you like to change?" + "\nPlease make a selection:\n" + "\n1.DNI"
 					+ "\n2.Nombre" + "\n3.Apellidos" + "\n4.Fecha de nacimiento" + "\n5.Nacionalidad" + "\n6.Sexo"
 					+ "\n7.Altura" + "\n8.Peso" + "\n9.Número de preso" + "\n10.Nivel de amenaza"
@@ -143,6 +152,9 @@ public class Prisoner_IO {
 			case 9:
 				System.out.println("\nInsert prisoner's new number: ");
 				p.setNum_preso(read.nextInt());
+				Prisoners.remove(id);// aunque de normal se reescribe, si cambia el nº preso quedarian los dos, asi
+				// que hay que borrar el antiguo
+				Prisoners.put(p.getNum_preso(), p);
 				break;
 			case 10:
 				System.out.println("\nInsert prisoner's new threat level: ");
@@ -150,7 +162,31 @@ public class Prisoner_IO {
 				break;
 			case 11:
 				System.out.println("\nInsert prisoner's new cell number: ");
-				p.setNum_celda(read.nextInt());
+				int x = 0;
+				int oldId = p.getCelda().getNum_celda();
+				cells.get(oldId).getPresos().remove(p);
+				cells.get(oldId).setCap_actual();
+				cells.get(oldId).setLlena();
+				cells.get(oldId).getPabellon().setNum_presos();
+				int cellId = 0;
+				while (x == 0) {
+					cellId = read.nextInt();
+					if (cells.containsKey(cellId)) {
+						if (cells.get(cellId).isLlena()) {
+							System.out.println("\nThis cell is full.Introduce a valid cell number: ");
+						} else {
+							p.setCelda(cells.get(cellId));
+							x = 1;
+						}
+					} else {
+						System.out.println("\nThat cell does not exist. Introduce a valid cell number: ");
+					}
+				}
+				cells.get(cellId).getPresos().add(p);
+				cells.get(cellId).setCap_actual();
+				cells.get(cellId).setLlena();
+				cells.get(cellId).getPabellon().setNum_presos();
+				read.nextLine();
 				break;
 			case 12:
 				System.out.println("\nInsert prisoner's new crime description: ");
@@ -184,15 +220,33 @@ public class Prisoner_IO {
 				System.out.println("That is not a valid selection.");
 				break;
 			}
-			Prisoners.remove(id);// aunque de normal se reescribe, si cambia el nº preso quedarian los dos, asi
-									// que hay que borrar el antiguo
-			Prisoners.put(p.getNum_preso(), p);
 		} else {
 			System.out.println("There is no prisoner registered with that number.");
 		}
 
 	}
-	
+
+	public void borrar(HashMap<Integer, Prisoner> Prisoners, HashMap<Integer, Cell> cells) {
+		System.out.println("\nInsert number of the prisoner you want to delete: ");
+		int id = read.nextInt();
+		if (Prisoners.containsKey(id)) {
+			cells.get(Prisoners.get(id).getCelda().getNum_celda()).getPresos().remove(Prisoners.get(id));
+			cells.get(Prisoners.get(id).getCelda().getNum_celda()).setCap_actual();
+			cells.get(Prisoners.get(id).getCelda().getNum_celda()).setLlena();
+			cells.get(Prisoners.get(id).getCelda().getNum_celda()).getPabellon().setNum_presos();
+			Prisoners.remove(id);
+			System.out.println("Prisoner deleted");
+		} else {
+			System.out.println("There is no prisoner with that number");
+		}
+	}
+
+	public void leerListado(HashMap<Integer, Prisoner> Prisoners) {
+		for (Prisoner p : Prisoners.values()) {
+			System.out.print(p.getNum_preso() + ", " + p.getNombre() + " " + p.getApellidos() + "\n");
+		}
+	}
+
 	public static int[] getTheDate(String s) {
 		int[] date = new int[3];
 		String dayS = Character.toString(s.charAt(0)) + Character.toString(s.charAt(1));
@@ -210,18 +264,7 @@ public class Prisoner_IO {
 		return date;
 	}
 
-	public void borrar(HashMap<Integer, Prisoner> Prisoners) {
-		System.out.println("\nInsert number of the prisoner you want to delete: ");
-		int id = read.nextInt();
-		if (Prisoners.containsKey(id)) {
-			Prisoners.remove(id);
-			System.out.println("Prisoner deleted");
-		} else {
-			System.out.println("There is no prisoner with that number");
-		}
-	}
-	
-	public static void realizarConsulta(HashMap<Integer, Prisoner> Prisoners) {
+	public void realizarConsulta(HashMap<Integer, Prisoner> Prisoners) {
 
 		HashMap<Integer, Prisoner> Query = new HashMap<Integer, Prisoner>(Prisoners);
 		ArrayList<Integer> deleteos = new ArrayList<Integer>();
@@ -319,7 +362,7 @@ public class Prisoner_IO {
 					System.out.println("\nInsert cell number: ");
 					int cell = read.nextInt();
 					for (Prisoner p : Query.values()) {
-						if (p.getNum_celda() != cell) {
+						if ((p.getCelda().getNum_celda()) != cell) {
 							deleteos.add(p.getNum_preso());
 						}
 					}
@@ -374,8 +417,8 @@ public class Prisoner_IO {
 					System.out.println("That is not a valid selection.");
 					break;
 				}
-				for (int i = 0; i < deleteos.size(); i++) {
-					Query.remove(deleteos.get(i));
+				for (int i : deleteos) {
+					Query.remove(i);
 				}
 				deleteos.clear();
 				System.out.println("Do you like to add another restriction?(yes(1)/ no(0))");
@@ -386,37 +429,54 @@ public class Prisoner_IO {
 
 		}
 
-		System.out.println("Do you like to visulize(1) or export it to CSV(2)?");
+		System.out.println("Do you like to visualize(0) or visualize and export it to CSV(1)?");
 		int opt = read.nextInt();
-		if (opt == 1) {
-			System.out.println("\n");
-			System.out.println(Query);
-		}else if (opt == 2) {
-			exportCSV(Query);System.out.println("\nConsulta guardada.");
+		read.nextLine();
+		if (opt == 0) {
+			System.out.println("\n" + Query);
+		} else if (opt == 1) {
+			System.out.println("\n" + Query);
+			exportCSV(Query);
+			System.out.println("\nConsulta guardada.");
 		}
 	}
-	
-	public static void exportCSV(HashMap<Integer, Prisoner> query) {
-		read.nextLine();
+
+	public void exportCSV(HashMap<Integer, Prisoner> query) {
 		System.out.println("Name your query: ");
 		String nameCSV = read.nextLine();
-        String archCSV = "src/com/ospe/jail/" + nameCSV + ".csv";
-        try {
-            FileWriter writer = new FileWriter(archCSV);
-            writer.write("DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);NUM_PRESO;NIV_AMENAZA;NUM_CELDA;CRIMEN;CONDENA(aa,mm,dd);INGRESO;VISITAS;LLAMADAS\n");
-            for (Prisoner p : query.values()) {
-                writer.write(p.toCSV(';'));
-            }
-            writer.flush();
-            writer.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		String archCSV = "src/" + nameCSV + ".csv";
 
-    }
-	
-	
-	
-	
-	
+		try {
+			FileWriter writer = new FileWriter(archCSV);
+			writer.write(
+					"DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);NUM_PRESO;NIV_AMENAZA;NUM_CELDA;CRIMEN;CONDENA(aa,mm,dd);INGRESO;VISITAS;LLAMADAS\n");
+			for (Prisoner p : query.values()) {
+				writer.write(p.toCSV(';'));
+			}
+			writer.flush();
+			writer.close();
+			System.out.println("\nCSV saved");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public String stats(HashMap<Integer, Prisoner> Prisoners) {
+		double sumaAlturas = 0;
+		double sumaAmenazas = 0;
+		double sumaEdades = 0;
+		for (Prisoner p : Prisoners.values()) {
+			sumaAlturas = sumaAlturas + p.getAltura();
+			sumaAmenazas = sumaAmenazas + p.getNiv_amenaza();
+			sumaEdades = sumaEdades + (YEAR - (getTheDate(p.getF_nac())[2]));
+		}
+		double mediaAlturas = sumaAlturas / Prisoners.size();
+		double mediaAmenazas = sumaAmenazas / Prisoners.size();
+		double mediaEdades = sumaEdades / Prisoners.size();
+		String s = "\nMedia de alturas de los presos: " + numberFormat.format(mediaAlturas) + " cm"
+				+ "\nMedia de niveles de amenaza de los presos: " + numberFormat.format(mediaAmenazas)
+				+ "\nMedia de edades de los presos: " + numberFormat.format(mediaEdades) + " años";
+		return s;
+	}
 }

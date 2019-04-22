@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class CivilServant_IO {
 
-	static Scanner read = new Scanner(System.in);
+	Scanner read = new Scanner(System.in);
 	public static final int YEAR = 2019;
 	
 	public void leer(HashMap<String, CivilServant> CivilServants) {
 		System.out.println("\nInsert civil servant Id: ");
-		int id = read.nextInt();
+		String id = read.nextLine();
 		if (CivilServants.containsKey(id)) {
 			System.out.println(CivilServants.get(id));
 
@@ -156,7 +156,7 @@ public class CivilServant_IO {
 
 	}
 	
-	public static int[] getTheDate(String s) {
+	public int[] getTheDate(String s) {
 		int[] date = new int[3];
 		String dayS = Character.toString(s.charAt(0)) + Character.toString(s.charAt(1));
 		String monthS = Character.toString(s.charAt(3)) + Character.toString(s.charAt(4));
@@ -184,7 +184,7 @@ public class CivilServant_IO {
 		}
 	}
 	
-	public static void realizarConsulta(HashMap<String, CivilServant> CivilServants) {
+	public void realizarConsulta(HashMap<String, CivilServant> CivilServants) {
 
 		HashMap<String, CivilServant> Query = new HashMap<String, CivilServant>(CivilServants);
 		ArrayList<String> deleteos = new ArrayList<String>();
@@ -321,21 +321,21 @@ public class CivilServant_IO {
 
 		}
 
-		System.out.println("Do you like to visulize(1) or export it to CSV(2)?");
+		System.out.println("Do you like to visulize(1) or visualize and export it to CSV(2)?");
 		int opt = read.nextInt();
 		if (opt == 1) {
-			System.out.println("\n");
-			System.out.println(Query);
+			System.out.println("\n" + Query);
 		}else if (opt == 2) {
+			System.out.println("\n" + Query);
 			exportCSV(Query);System.out.println("\nConsulta guardada.");
 		}
 	}
 	
-	public static void exportCSV(HashMap<String, CivilServant> query) {
+	public void exportCSV(HashMap<String, CivilServant> query) {
 		read.nextLine();
 		System.out.println("Name your query: ");
 		String nameCSV = read.nextLine();
-        String archCSV = "src/com/ospe/jail/" + nameCSV + ".csv";
+        String archCSV = "src/" + nameCSV + ".csv";
         try {
             FileWriter writer = new FileWriter(archCSV);
             writer.write("DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);CARGO;ID_FUNC;SUELDO;PABELLON;TURNO\n");

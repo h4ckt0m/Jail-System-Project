@@ -1,75 +1,119 @@
 package com.ospe.jail;
 
+import java.util.ArrayList;
+
+import com.google.gson.annotations.Expose;
+
 public class Pavilion {
 
-	protected int numero_celdas;
-	protected int pavilion;
-	protected int numero_guardias;
-	protected int numero_presos;
-	protected String salas_cercanas;
-	
-	
-	//Constructors
-	
+	@Expose
+	private int num_pabellon;
+	@Expose
+	private int num_celdas;
+	@Expose
+	private int num_presos;
+	@Expose
+	private int num_guardias;
+	@Expose
+	private int num_salasComunes;
+	@Expose
+	private ArrayList<Cell> celdas = new ArrayList<Cell>();
+
+	// Constructors
+
 	public Pavilion() {
-		
-	}
-	
-	public Pavilion(int numero_celdas,int pavilion,int numero_guardias,
-			int numero_presos,String salas_cercanas) {
-		
-		this.numero_celdas = numero_celdas;
-		this.pavilion = pavilion;
-		this.numero_guardias = numero_guardias;
-		this.numero_presos = numero_presos;
-		this.salas_cercanas = salas_cercanas;
-		
-	}
-	
-	//Getters and Setters
-
-	public int getNumero_celdas() {
-		return numero_celdas;
 	}
 
-	public void setNumero_celdas(int numero_celdas) {
-		this.numero_celdas = numero_celdas;
+	public Pavilion(int num_pabellon, int numero_guardias, int num_salasComunes, ArrayList<Cell> celdas) {
+		this.num_pabellon = num_pabellon;
+		this.num_guardias = numero_guardias;
+		this.num_salasComunes = num_salasComunes;
+		this.celdas = celdas;
+		setNum_celdas();
+		setNum_presos();
 	}
 
-	public int getPavilion() {
-		return pavilion;
+	public int getNum_pabellon() {
+		return num_pabellon;
 	}
 
-	public void setPavilion(int pavilion) {
-		this.pavilion = pavilion;
+	public void setNum_pabellon(int num_pabellon) {
+		this.num_pabellon = num_pabellon;
 	}
 
-	public int getNumero_guardias() {
-		return numero_guardias;
+	public int getNum_celdas() {
+		return num_celdas;
 	}
 
-	public void setNumero_guardias(int numero_guardias) {
-		this.numero_guardias = numero_guardias;
+	public void setNum_celdas() {
+		this.num_celdas = celdas.size();
 	}
 
-	public int getNumero_presos() {
-		return numero_presos;
+	public int getNum_presos() {
+		return num_presos;
 	}
 
-	public void setNumero_presos(int numero_presos) {
-		this.numero_presos = numero_presos;
+	public void setNum_presos() {
+		int sum = 0;
+		for (Cell c : celdas) {
+			sum = sum + c.getPresos().size();
+		}
+		this.num_presos = sum;
 	}
 
-	public String getSalas_cercanas() {
-		return salas_cercanas;
+	public int getNum_guardias() {
+		return num_guardias;
 	}
 
-	public void setSalas_cercanas(String salas_cercanas) {
-		this.salas_cercanas = salas_cercanas;
+	public void setNum_guardias(int num_guardias) {
+		this.num_guardias = num_guardias;
 	}
-	
-	
-	
-	
-	
+
+	public int getNum_salasComunes() {
+		return num_salasComunes;
+	}
+
+	public void setNum_salasComunes(int num_salasComunes) {
+		this.num_salasComunes = num_salasComunes;
+	}
+
+	public ArrayList<Cell> getCeldas() {
+		return celdas;
+	}
+
+	public void setCeldas(ArrayList<Cell> celdas) {
+		this.celdas = celdas;
+	}
+
+	@Override
+	public String toString() {
+		String s = "\nNúmero de pabellón: " + num_pabellon + "\nNúmero de celdas: " + num_celdas
+				+ "\nNúmero de presos: " + num_presos + "\nNúmero de guardias: " + num_guardias
+				+ "\nNúmero de salas comunes: " + num_salasComunes + "\nCeldas contenidas: \n";
+		for (Cell c : celdas) {
+			s = s + "\t" + c.getNum_celda() + ", " + c.getTipo_celda() + ", ";
+			String p;
+			if (c.isEstado_puerta()) {
+				p = "puerta abierta";
+			} else {
+				p = "puerta cerrada";
+			}
+			s = s + p + "\n\tPresos:\n";
+
+			for (Prisoner pr : c.getPresos()) {
+				s = s + "\t\t" + pr.getNum_preso() + ", " + pr.getNombre() + "\n";
+			}
+			s = s + "\n";
+		}
+		return s;
+	}
+
+	public String toCSV(char i) {
+		String s = "" + num_pabellon + i + num_celdas + i + num_presos + i + num_guardias + i + num_salasComunes + i;
+		for (Cell c : celdas) {
+			s = s + c.getNum_celda() + ",";
+		}
+		s = s + "\n";
+		return s;
+	}
 }

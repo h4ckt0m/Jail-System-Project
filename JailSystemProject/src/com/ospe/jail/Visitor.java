@@ -116,7 +116,7 @@ public class Visitor extends Person implements Serializable {
 				+ "\nFecha de nacimiento (día/mes/año): " + f_nac + "\nNacionalidad: " + nacionalidad + "\nSexo (h/m): "
 				+ sexo + "\nAltura (cm): " + altura + "\nPeso (kg): " + peso + "\nId del visitante: " + id_visitor + "\nPreso visitado: " 
 				+  preso_visitado + "\nFecha de visita: " + fecha_visita + "\nHora de visita: " + hora_visita + "\nRelacion con el preso: " + relacion_preso
-				+ "\nNumero de visitantes: " + numero_visitantes + "\nSolicitante de la visita: " + solicitante_visita;
+				+ "\nNumero de visitantes: " + numero_visitantes + "\nSolicitante de la visita: " + solicitante_visita + "\n\n";
 		
 		return s;
 	}
@@ -126,7 +126,7 @@ public class Visitor extends Person implements Serializable {
                 + i + f_nac + i + nacionalidad + i
                 + sexo + i + altura + i + peso + i + id_visitor + i + preso_visitado
                 + i + fecha_visita + i + hora_visita + i + relacion_preso
-                + i + numero_visitantes + i + solicitante_visita;
+                + i + numero_visitantes + i + solicitante_visita + "\n";
         return s;
     }
 	

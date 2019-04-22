@@ -55,8 +55,8 @@
   },
   "153": {
     "num_preso": 153,
-    "niv_amenaza": 1,
-    "num_celda": 1012,
+    "niv_amenaza": 2,
+    "num_celda": 1102,
     "condena": "008, 08, 12",
     "crimen": "Intento de asesinato",
     "ingreso": "16/10/2014",
@@ -200,7 +200,7 @@
   "392": {
     "num_preso": 392,
     "niv_amenaza": 1,
-    "num_celda": 1033,
+    "num_celda": 1039,
     "condena": "005, 10, 28",
     "crimen": "Conduccion temeraria",
     "ingreso": "04/10/2016",
@@ -218,7 +218,7 @@
   "444": {
     "num_preso": 444,
     "niv_amenaza": 2,
-    "num_celda": 2123,
+    "num_celda": 2064,
     "condena": "012, 06, 14",
     "crimen": "Abuso de menores",
     "ingreso": "18/02/2014",
@@ -380,7 +380,7 @@
   "688": {
     "num_preso": 688,
     "niv_amenaza": 1,
-    "num_celda": 3021,
+    "num_celda": 3086,
     "condena": "030, 02, 07",
     "crimen": "Trafico de drogas",
     "ingreso": "20/04/2007",
@@ -441,7 +441,7 @@
     "visitas": true,
     "llamadas": true,
     "nombre": "Godofredo",
-    "apellidos": "CataÃ±o Marina",
+    "apellidos": "Cataño Marina",
     "DNI": "61392786-C",
     "f_nac": "14/11/1968",
     "nacionalidad": "Spanish",
@@ -452,7 +452,7 @@
   "896": {
     "num_preso": 896,
     "niv_amenaza": 1,
-    "num_celda": 3060,
+    "num_celda": 3004,
     "condena": "005, 00, 10",
     "crimen": "Llevar identificacion falsa",
     "ingreso": "15/02/2016",

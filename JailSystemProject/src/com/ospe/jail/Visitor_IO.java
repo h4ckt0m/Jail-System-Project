@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Visitor_IO {
 
-	static Scanner read = new Scanner(System.in);
+	Scanner read = new Scanner(System.in);
 	public static final int YEAR = 2019;
 	
 	public void leer(HashMap<String, Visitor> Visitors) {
@@ -168,7 +168,7 @@ public class Visitor_IO {
 
 	}
 	
-	public static int[] getTheDate(String s) {
+	public int[] getTheDate(String s) {
 		int[] date = new int[3];
 		String dayS = Character.toString(s.charAt(0)) + Character.toString(s.charAt(1));
 		String monthS = Character.toString(s.charAt(3)) + Character.toString(s.charAt(4));
@@ -196,7 +196,7 @@ public class Visitor_IO {
 		}
 	}
 	
-	public static void realizarConsulta(HashMap<String, Visitor> Visitors) {
+	public void realizarConsulta(HashMap<String, Visitor> Visitors) {
 
 		HashMap<String, Visitor> Query = new HashMap<String, Visitor>(Visitors);
 		ArrayList<String> deleteos = new ArrayList<String>();
@@ -205,10 +205,10 @@ public class Visitor_IO {
 			try {
 				System.out.println("\nIn which field would you like to put the restriction?"
 						+ "\nPlease make a selection:\n" + "\n1.Search by DNI" + "\n2.Search by name"
-						+ "\n3.Search by age" + "\n4.Search by nationality" + "\n5.Search by height"
-						+ "\n6.Search by weight" + "\n7.Search by visitor Id" + "\n8.Search by prisoner visited"
-						+ "\n9.Search by visit date" + "\n10.Search by visit hour" + "\n11.Search by relation with the prisoner" + "\n12.Search by number of visitors"
-						+ "\n13.Search by visit applicant" + "\n0.Exit");
+						+ "\n3.Search by age" + "\n4.Search by nationality" + "\n5.Search by sex" + "\n6.Search by height"
+						+ "\n7.Search by weight" + "\n8.Search by visitor Id" + "\n9.Search by prisoner visited"
+						+ "\n10.Search by visit date" + "\n11.Search by visit hour" + "\n12.Search by relation with the prisoner" + "\n13.Search by number of visitors"
+						+ "\n14.Search by visit applicant" + "\n0.Exit");
 				int choice = read.nextInt();
 				read.nextLine();
 				switch (choice) {
@@ -256,6 +256,15 @@ public class Visitor_IO {
 					}
 					break;
 				case 5:
+					System.out.println("\nInsert sex(h/m): ");
+					String sex = read.nextLine();
+					for (Visitor v : Query.values()) {
+						if (!v.getSexo().equals(sex)) {
+							deleteos.add(v.getId_visitor());
+						}
+					}
+					break;
+				case 6:
 					System.out.println("\nInsert minimum height(cm): ");
 					int minHeight = read.nextInt();
 					System.out.println("\nInsert maximum height(cm): ");
@@ -266,7 +275,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 6:
+				case 7:
 					System.out.println("\nInsert minimum weight(kg): ");
 					String minW = read.nextLine();
 					System.out.println("\nInsert maximum weight(kg): ");
@@ -279,7 +288,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 7:
+				case 8:
 					System.out.println("\nInsert Id visitor: ");
 					String idv = read.nextLine();
 					for (Visitor v : Query.values()) {
@@ -288,7 +297,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 8:
+				case 9:
 					System.out.println("\nInsert prisoner visited: ");
 					int prv = read.nextInt();
 					for (Visitor v : Query.values()) {
@@ -297,7 +306,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 9:
+				case 10:
 					System.out.println("\nInsert minimum visit month: ");
 					int minMonth = read.nextInt();
 					System.out.println("\nInsert maximum visit month: ");
@@ -310,7 +319,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 10:
+				case 11:
 					System.out.println("\nInsert minimum visit hour: ");
 					int minHour = read.nextInt();
 					System.out.println("\nInsert maximum visit hour: ");
@@ -323,8 +332,9 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 11:
+				case 12:
 					System.out.println("\nInsert relation with the prisoner: ");
+					System.out.println("\nOptions: familiar, abogado, agente policial, amigo o pareja");
 					String rep = read.nextLine();
 					for (Visitor v : Query.values()) {
 						if (!v.getRelacion_preso().equals(rep)) {
@@ -332,7 +342,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 12:
+				case 13:
 					System.out.println("\nInsert number of visitors: ");
 					int numv = read.nextInt();
 					for (Visitor v : Query.values()) {
@@ -341,7 +351,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 13:
+				case 14:
 					System.out.println("\nInsert visitor applicant: ");
 					String vapp = read.nextLine();
 					for (Visitor v : Query.values()) {
@@ -366,21 +376,21 @@ public class Visitor_IO {
 
 		}
 
-		System.out.println("Do you like to visulize(1) or export it to CSV(2)?");
+		System.out.println("Do you like to visulize(1) or visualize and export it to CSV(2)?");
 		int opt = read.nextInt();
 		if (opt == 1) {
-			System.out.println("\n");
-			System.out.println(Query);
+			System.out.println("\n" + Query);
 		}else if (opt == 2) {
+			System.out.println("\n" + Query);
 			exportCSV(Query);System.out.println("\nConsulta guardada.");
 		}
 	}
 	
-	public static void exportCSV(HashMap<String, Visitor> query) {
+	public void exportCSV(HashMap<String, Visitor> query) {
 		read.nextLine();
 		System.out.println("Name your query: ");
 		String nameCSV = read.nextLine();
-        String archCSV = "src/com/ospe/jail/" + nameCSV + ".csv";
+        String archCSV = "src/" + nameCSV + ".csv";
         try {
             FileWriter writer = new FileWriter(archCSV);
             writer.write("DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);ID_VISIT;PRESO_VISIT;FECHA_VISIT(dd,mm,aaa);HORA_VISIT(hh,mm,ss);RELACION_PRESO;NUM_VISIT;SOLICITANTE_VISITA\n");
