@@ -67,7 +67,6 @@ public class Visitor_IO {
 
 		System.out.println("\nInsert new visitor's visit hour : ");
 		v.setHora_visita(read.nextLine());
-
 		int ex = 0;
 		while (ex == 0) {
 			System.out.println("\nInsert new visitor's relation with the prisoner: " + "\n1)Familiar" + "\n2)Pareja"
@@ -99,7 +98,6 @@ public class Visitor_IO {
 				break;
 			}
 		}
-
 		System.out.println("\nInsert new number of visitors: ");
 		v.setNumero_visitantes(read.nextInt());
 
@@ -180,7 +178,37 @@ public class Visitor_IO {
 				break;
 			case 13:
 				System.out.println("\nInsert visitor's new relation with the prisoner: ");
-				v.setRelacion_preso(read.nextLine());
+				int ex2 = 0;
+				while (ex2 == 0) {
+					System.out.println("\nInsert new visitor's relation with the prisoner: " + "\n1)Familiar"
+							+ "\n2)Pareja" + "\n3)Amigo" + "\n4)Abogado" + "\n5)Agente policial");
+					int cho = read.nextInt();
+					switch (cho) {
+					case 1:
+						v.setRelacion_preso("familiar");
+						ex2 = 1;
+						break;
+					case 2:
+						v.setRelacion_preso("pareja");
+						ex2 = 1;
+						break;
+					case 3:
+						v.setRelacion_preso("amigo");
+						ex2 = 1;
+						break;
+					case 4:
+						v.setRelacion_preso("abogado");
+						ex2 = 1;
+						break;
+					case 5:
+						v.setRelacion_preso("agente policial");
+						ex2 = 1;
+						break;
+					default:
+						System.out.println("\nThat is not a valid option");
+						break;
+					}
+				}
 				break;
 			case 14:
 				System.out.println("\nInsert visitor's new number of visitors: ");
