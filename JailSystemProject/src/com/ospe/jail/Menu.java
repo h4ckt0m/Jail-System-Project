@@ -12,20 +12,12 @@ public class Menu {
 		System.out.println("2) Import database files in JSON");
 		System.out.println("3) Export database files in CSV");
 		System.out.println("4) Send files by email");
+		System.out.println("5) Save changes");
 		System.out.println("0) Exit");
 	}
-	
-	public void menuBasic() {
-		System.out.println("+-----------------------------------+");
-		System.out.println("|       Welcome to Jail System      |");
-		System.out.println("|        Security Project App       |");
-		System.out.println("+-----------------------------------+");
-		System.out.println("\nPlease make a selection: ");
-		System.out.println("\n1) Register Management");
-		System.out.println("\n0) Exit");
-	}
-	
+
 	public void seleccionTipoDato() {
+		System.out.println("\n\n_____________________________________________________\n\n");
 		System.out.println("\nSelect the data type you want to work with: ");
 		System.out.println("\n1) Prisoners");
 		System.out.println("2) Civil Servants");
@@ -36,7 +28,11 @@ public class Menu {
 	}
 
 	public void gestorPresos() {
-		System.out.println("\nSelect the action you want to perform: ");
+		System.out.println("\n\n_____________________________________________________\n\n");
+		System.out.println("+-----------------------------------+");
+		System.out.println("|             PRISONERS             |");
+		System.out.println("+-----------------------------------+");
+		System.out.println("Select the action you want to perform: ");
 		System.out.println("\n1) Show list of all prisoners");
 		System.out.println("2) Read one prisoner");
 		System.out.println("3) Create a new prisoner");
@@ -47,7 +43,11 @@ public class Menu {
 		System.out.println("0) Go back");
 	}
 	public void gestorFuncionarios() {
-		System.out.println("\nSelect the action you want to perform: ");
+		System.out.println("\n\n_____________________________________________________\n\n");
+		System.out.println("+-----------------------------------+");
+		System.out.println("|           CIVIL SERVANTS          |");
+		System.out.println("+-----------------------------------+");
+		System.out.println("Select the action you want to perform: ");
 		System.out.println("\n1) Show list of all civil servants");
 		System.out.println("2) Read one civil servant");
 		System.out.println("3) Create a new civil servant");
@@ -58,7 +58,11 @@ public class Menu {
 		System.out.println("0) Go back");
 	}
 	public void gestorVisitantes() {
-		System.out.println("\nSelect the action you want to perform: ");
+		System.out.println("\n\n_____________________________________________________\n\n");
+		System.out.println("+-----------------------------------+");
+		System.out.println("|              VISITORS             |");
+		System.out.println("+-----------------------------------+");
+		System.out.println("Select the action you want to perform: ");
 		System.out.println("\n1) Show list of all visitors");
 		System.out.println("2) Read one visitor");
 		System.out.println("3) Create a new visitor");
@@ -69,7 +73,11 @@ public class Menu {
 		System.out.println("0) Go back");
 	}
 	public void gestorCeldas() {
-		System.out.println("\nSelect the action you want to perform: ");
+		System.out.println("\n\n_____________________________________________________\n\n");
+		System.out.println("+-----------------------------------+");
+		System.out.println("|               CELLS               |");
+		System.out.println("+-----------------------------------+");
+		System.out.println("Select the action you want to perform: ");
 		System.out.println("\n1) Show list of all cells");
 		System.out.println("2) Read one cell");
 		System.out.println("3) Create a new cell");
@@ -80,7 +88,11 @@ public class Menu {
 		System.out.println("0) Go back");
 	}
 	public void gestorPabellones() {
-		System.out.println("\nSelect the action you want to perform: ");
+		System.out.println("\n\n_____________________________________________________\n\n");
+		System.out.println("+-----------------------------------+");
+		System.out.println("|             PAVILIONS             |");
+		System.out.println("+-----------------------------------+");
+		System.out.println("Select the action you want to perform: ");
 		System.out.println("\n1) Show list of all pavilions");
 		System.out.println("2) Read one pavilion");
 		System.out.println("3) Create a new pavilion");
