@@ -132,6 +132,7 @@ public class Gestor {
 							m.HashToJson(0, "prisondb");
 							m.HashToJson(1, "civilservants");
 							m.HashToJson(2, "visitors");
+							System.out.println("Changes saved.");
 						}
 						System.out.println("Do you want to update the backup copy?(1=yes, 0=no)");
 						int backup = read.nextInt();
@@ -480,6 +481,7 @@ public class Gestor {
 							m.HashToJson(0, "prisondb");
 							m.HashToJson(1, "civilservants");
 							m.HashToJson(2, "visitors");
+							System.out.println("Changes saved.");
 						}
 						System.out.println("Do you want to update the backup copy?(1=yes, 0=no)");
 						int backup = read.nextInt();
@@ -859,7 +861,7 @@ public class Gestor {
 				file.write(gson.toJson(visitors));
 			}
 			file.flush();
-			System.out.println("Changes saved.");
+			
 
 		} catch (IOException e) {
 			e.printStackTrace();
