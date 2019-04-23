@@ -99,9 +99,6 @@ public class Gestor {
 		int loaded = 0;
 		int ret = -1; // Rematar login con if else power , duplicar todo el codigo de la opcion 1 en
 						// el else
-		m.JsonToHashPab("prisondb");
-		m.JsonToHashCS("civilservants");
-		m.JsonToHashV("visitors");
 		while (ret == -1) {
 			ret = m.login();
 			if (ret == 1) {
