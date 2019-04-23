@@ -33,11 +33,11 @@ Our project is based on a security system of a prision.
 
 ## Prerequisites
 
-You will only need [Eclipse IDE](https://www.eclipse.org/downloads/) and [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) on their last version.
+You will only need [Eclipse IDE](https://www.eclipse.org/downloads) and [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) on their last version.
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Eclipse]((https://www.eclipse.org/downloads/) (which . From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Eclipse](https://www.eclipse.org/downloads/). From your command line:
 
 ```bash
 # Clone this repository
