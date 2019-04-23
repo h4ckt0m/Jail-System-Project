@@ -6,9 +6,10 @@ Our project is based on a security system of a prision.
 
 - **Francisco Afán Rodriguez**     -> *Project Boss*
 - **Héctor Palencia Sánchez**      -> *Coder*
+- **Gonzalo Alcaide Agundez**      -> *Coder*
 - **Arturo Alba Sánchez-Mayoral**  -> *Administrator*
 - **Alberto González Fernández**   -> *Administrator*
-- **Gonzalo Alcaide Agundez**      -> *Coder*
+
 
 ## Prerequisites
 
