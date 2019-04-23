@@ -1,5 +1,5 @@
 # [![Jail System Project][logo]][Jail System Project]
-[logo]:https://HectorSkm.github.io/ProyectoIngenieria/resources/jsp.ico "Jail System Project"
+[logo]:https://HectorSkm.github.io/ProyectoIngenieria/resources/JSP.png "Jail System Project"
 
 ## Description
 
