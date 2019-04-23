@@ -29,7 +29,8 @@ Our project is based on a security system of a prision.
 [<img src="https://avatars3.githubusercontent.com/u/19176760?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/HectorSkm)&nbsp;&nbsp;&nbsp;&nbsp; 
 [<img src="https://avatars0.githubusercontent.com/u/47125167?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/10GGGGGGGGGG)&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="https://avatars0.githubusercontent.com/u/29259992?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/ArtySaurio)&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://avatars3.githubusercontent.com/u/47120662?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/glezon99)
+[<img src="https://avatars0.githubusercontent.com/u/29259992?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/glezon99)
+
 ## Prerequisites
 
 You will only need [Eclipse IDE](https://www.eclipse.org/downloads/) and [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) on their last version.
@@ -53,7 +54,7 @@ $ ./jsp.exe
 
 We will improve new versions for our project since we achieve version 1.0.
 
-## Emailware
+## Contact with us
 
 We hope you like our code. Meaning, if you liked using this app or has helped you in anyway, I'd like you send me an email on <jailsystemproject@gmail.com> about anything you'd want to say about this software. We'd really appreciate it!
 
