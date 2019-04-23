@@ -29,7 +29,7 @@ Our project is based on a security system of a prision.
 [<img src="https://avatars3.githubusercontent.com/u/19176760?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/HectorSkm)&nbsp;&nbsp;&nbsp;&nbsp; 
 [<img src="https://avatars0.githubusercontent.com/u/47125167?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/10GGGGGGGGGG)&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="https://avatars0.githubusercontent.com/u/29259992?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/ArtySaurio)&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://avatars0.githubusercontent.com/u/29259992?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/glezon99)
+[<img src="https://avatars3.githubusercontent.com/u/47120662?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/glezon99)
 
 ## Prerequisites
 
