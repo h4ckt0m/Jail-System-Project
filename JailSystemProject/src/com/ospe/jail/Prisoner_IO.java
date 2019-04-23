@@ -35,7 +35,7 @@ public class Prisoner_IO {
 		System.out.println("\nInsert new prisoner last names: ");
 		p.setApellidos(read.nextLine());
 
-		System.out.println("\nInsert new prisoner birth date (día/mes/año): ");
+		System.out.println("\nInsert new prisoner birth date (dÃ­a/mes/aÃ±o): ");
 		p.setF_nac(read.nextLine());
 
 		System.out.println("\nInsert new prisoner nationality: ");
@@ -75,10 +75,10 @@ public class Prisoner_IO {
 		System.out.println("\nInsert new prisoner crime description: ");
 		p.setCrimen(read.nextLine());
 
-		System.out.println("\nInsert new prisoner time of condemnation (años, meses, días): ");
+		System.out.println("\nInsert new prisoner time of condemnation (aÃ±os, meses, dÃ­as): ");
 		p.setCondena(read.nextLine());
 
-		System.out.println("\nInsert new prisoner entrance date (día/mes/año): ");
+		System.out.println("\nInsert new prisoner entrance date (dÃ­a/mes/aÃ±o): ");
 		p.setIngreso(read.nextLine());
 
 		System.out.println("\nHas the new prisoner visits permission? (si/no): ");
@@ -108,8 +108,8 @@ public class Prisoner_IO {
 			Prisoner p = Prisoners.get(id);
 			System.out.println("\nWhich field would you like to change?" + "\nPlease make a selection:\n" + "\n1.DNI"
 					+ "\n2.Nombre" + "\n3.Apellidos" + "\n4.Fecha de nacimiento" + "\n5.Nacionalidad" + "\n6.Sexo"
-					+ "\n7.Altura" + "\n8.Peso" + "\n9.Número de preso" + "\n10.Nivel de amenaza"
-					+ "\n11.Número de celda" + "\n12.Crimen" + "\n13.Tiempo de condena" + "\n14.Ingreso"
+					+ "\n7.Altura" + "\n8.Peso" + "\n9.NÃºmero de preso" + "\n10.Nivel de amenaza"
+					+ "\n11.NÃºmero de celda" + "\n12.Crimen" + "\n13.Tiempo de condena" + "\n14.Ingreso"
 					+ "\n15.Visitas" + "\n16.Llamadas" + "\n0.Exit");
 			int choice = read.nextInt();
 			read.nextLine();
@@ -130,7 +130,7 @@ public class Prisoner_IO {
 				p.setApellidos(read.nextLine());
 				break;
 			case 4:
-				System.out.println("\nInsert prisoner's new birth date (día/mes/año): ");
+				System.out.println("\nInsert prisoner's new birth date (dÃ­a/mes/aÃ±o): ");
 				p.setF_nac(read.nextLine());
 				break;
 			case 5:
@@ -152,7 +152,7 @@ public class Prisoner_IO {
 			case 9:
 				System.out.println("\nInsert prisoner's new number: ");
 				p.setNum_preso(read.nextInt());
-				Prisoners.remove(id);// aunque de normal se reescribe, si cambia el nº preso quedarian los dos, asi
+				Prisoners.remove(id);// aunque de normal se reescribe, si cambia el nÂº preso quedarian los dos, asi
 				// que hay que borrar el antiguo
 				Prisoners.put(p.getNum_preso(), p);
 				break;
@@ -193,11 +193,11 @@ public class Prisoner_IO {
 				p.setCrimen(read.nextLine());
 				break;
 			case 13:
-				System.out.println("\nInsert prisoner's new time of condemnation (años, meses, días): ");
+				System.out.println("\nInsert prisoner's new time of condemnation (aÃ±os, meses, dÃ­as): ");
 				p.setCondena(read.nextLine());
 				break;
 			case 14:
-				System.out.println("\nInsert prisoner's new entry date (día/mes/año): ");
+				System.out.println("\nInsert prisoner's new entry date (dÃ­a/mes/aÃ±o): ");
 				p.setIngreso(read.nextLine());
 				break;
 			case 15:
@@ -247,7 +247,7 @@ public class Prisoner_IO {
 		}
 	}
 
-	public static int[] getTheDate(String s) {
+	public int[] getTheDate(String s) {
 		int[] date = new int[3];
 		String dayS = Character.toString(s.charAt(0)) + Character.toString(s.charAt(1));
 		String monthS = Character.toString(s.charAt(3)) + Character.toString(s.charAt(4));
@@ -487,7 +487,7 @@ public class Prisoner_IO {
 
 		String s = "\nMedia de alturas de los presos: " + numberFormat.format(mediaAlturas) + " cm"
 				+ "\r\nMedia de niveles de amenaza de los presos: " + numberFormat.format(mediaAmenazas) + " sobre 5"
-				+ "\r\nMedia de edades de los presos: " + numberFormat.format(mediaEdades) + " años"
+				+ "\r\nMedia de edades de los presos: " + numberFormat.format(mediaEdades) + " aÃ±os"
 				+ "\r\nPorcentaje de presos con permiso de visitas: " + numberFormat.format(porcentajeVisitas) + "%"
 				+ "\r\nPorcentaje de presos con permiso de llamadas: " + numberFormat.format(porcentajeLlamadas) + "%";
 		return s;
