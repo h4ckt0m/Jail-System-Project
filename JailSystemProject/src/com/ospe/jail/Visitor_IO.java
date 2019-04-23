@@ -41,7 +41,7 @@ public class Visitor_IO {
 		System.out.println("\nInsert new visitor last names: ");
 		v.setApellidos(read.nextLine());
 
-		System.out.println("\nInsert new visitor birth date (día/mes/año): ");
+		System.out.println("\nInsert new visitor birth date (dÃ­a/mes/aÃ±o): ");
 		v.setF_nac(read.nextLine());
 
 		System.out.println("\nInsert new visitor nationality: ");
@@ -68,28 +68,36 @@ public class Visitor_IO {
 		System.out.println("\nInsert new visitor's visit hour : ");
 		v.setHora_visita(read.nextLine());
 
-		System.out.println("\nInsert new visitor's relation with the prisoner: " + "\n1)Familiar" + "\n2)Pareja"
-				+ "\n3)Amigo" + "\n4)Abogado" + "\n5)Agente policial");
-		int choice = read.nextInt();
-		switch (choice) {
-		case 1:
-			v.setRelacion_preso("familiar");
-			break;
-		case 2:
-			v.setRelacion_preso("pareja");
-			break;
-		case 3:
-			v.setRelacion_preso("amigo");
-			break;
-		case 4:
-			v.setRelacion_preso("abogado");
-			break;
-		case 5:
-			v.setRelacion_preso("agente policial");
-			break;
-		default:
-			System.out.println("\nThat is not a valid option");
-			break;
+		int ex = 0;
+		while (ex == 0) {
+			System.out.println("\nInsert new visitor's relation with the prisoner: " + "\n1)Familiar" + "\n2)Pareja"
+					+ "\n3)Amigo" + "\n4)Abogado" + "\n5)Agente policial");
+			int choice = read.nextInt();
+			switch (choice) {
+			case 1:
+				v.setRelacion_preso("familiar");
+				ex = 1;
+				break;
+			case 2:
+				v.setRelacion_preso("pareja");
+				ex = 1;
+				break;
+			case 3:
+				v.setRelacion_preso("amigo");
+				ex = 1;
+				break;
+			case 4:
+				v.setRelacion_preso("abogado");
+				ex = 1;
+				break;
+			case 5:
+				v.setRelacion_preso("agente policial");
+				ex = 1;
+				break;
+			default:
+				System.out.println("\nThat is not a valid option");
+				break;
+			}
 		}
 
 		System.out.println("\nInsert new number of visitors: ");
@@ -131,7 +139,7 @@ public class Visitor_IO {
 				v.setApellidos(read.nextLine());
 				break;
 			case 4:
-				System.out.println("\nInsert visitor's new birth date (día/mes/año): ");
+				System.out.println("\nInsert visitor's new birth date (dÃ­a/mes/aÃ±o): ");
 				v.setF_nac(read.nextLine());
 				break;
 			case 5:
@@ -458,7 +466,7 @@ public class Visitor_IO {
 		double porcentajeAgente = (sumaAgente / Visitors.size()) * 100;
 
 		String s = "\nMedia de visitantes por solicitud: " + numberFormat.format(mediaVisitantes) + " visitantes"
-				+ "\r\nMedia de edades de los solicitantes: " + numberFormat.format(mediaEdades) + " años"
+				+ "\r\nMedia de edades de los solicitantes: " + numberFormat.format(mediaEdades) + " aÃ±os"
 				+ "\r\nPorcentaje de solicitantes familiares: " + numberFormat.format(porcentajeFamilia) + "%"
 				+ "\r\nPorcentaje de solicitantes parejas: " + numberFormat.format(porcentajePareja) + "%"
 				+ "\r\nPorcentaje de solicitantes amigos: " + numberFormat.format(porcentajeAmigo) + "%"
