@@ -1,12 +1,14 @@
 package com.ospe.jail;
 
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Pavilion_IO {
 	Scanner read = new Scanner(System.in);
+	DecimalFormat numberFormat = new DecimalFormat("#.##");
 	public static final int YEAR = 2019;
 
 	public void leer(HashMap<Integer, Pavilion> pavilions) {
@@ -90,8 +92,7 @@ public class Pavilion_IO {
 
 	public void leerListado(HashMap<Integer, Pavilion> pavilions) {
 		for (Pavilion p : pavilions.values()) {
-			System.out.print("Numero del pabellon: " + p.getNum_pabellon() + " || Numero de celdas: " + p.getNum_celdas() + " || Numero de presos: " + p.getNum_presos() + "\n");
-			System.out.println("-----------------------------------------------------------------------");
+			System.out.print(p.getNum_pabellon() + ", " + p.getNum_celdas() + " celdas, " + p.getNum_presos() + " presos\n");
 		}
 	}
 
@@ -114,5 +115,27 @@ public class Pavilion_IO {
 			e.printStackTrace();
 		}
 
+	}
+	public String stats(HashMap<Integer, Pavilion> pavilions) {
+		double sumaCeldas = 0;
+		double sumaPresos = 0;
+		double sumaGuardias = 0;
+		double sumaSalas = 0;
+		for (Pavilion p : pavilions.values()) {
+			sumaCeldas = sumaCeldas + p.getNum_celdas();
+			sumaPresos = sumaPresos + p.getNum_presos();
+			sumaGuardias=sumaGuardias+p.getNum_guardias();
+			sumaSalas=sumaSalas+p.getNum_salasComunes();
+		}
+		double mediaCeldas = sumaCeldas / pavilions.size();
+		double mediaPresos = sumaPresos / pavilions.size();
+		double mediaGuardias = sumaGuardias / pavilions.size();
+		double mediaSalas = sumaSalas / pavilions.size();
+				
+		String s = "\nMedia de celdas por pabellón: " + numberFormat.format(mediaCeldas) + " celdas"
+				+ "\r\nMedia de presos por pabellón: " + numberFormat.format(mediaPresos) + " presos"
+				+ "\r\nMedia de guardias por pabellón: "+numberFormat.format(mediaGuardias)+" guardias"
+				+ "\r\nMedia de salas comunes por pabellón: "+numberFormat.format(mediaSalas)+" salas";
+		return s;
 	}
 }

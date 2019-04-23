@@ -466,17 +466,30 @@ public class Prisoner_IO {
 		double sumaAlturas = 0;
 		double sumaAmenazas = 0;
 		double sumaEdades = 0;
+		double sumaVisitas = 0;
+		double sumaLlamadas = 0;
 		for (Prisoner p : Prisoners.values()) {
 			sumaAlturas = sumaAlturas + p.getAltura();
 			sumaAmenazas = sumaAmenazas + p.getNiv_amenaza();
 			sumaEdades = sumaEdades + (YEAR - (getTheDate(p.getF_nac())[2]));
+			if (p.isVisitas()) {
+				sumaVisitas = sumaVisitas + 1;
+			}
+			if (p.isLlamadas()) {
+				sumaLlamadas = sumaLlamadas + 1;
+			}
 		}
 		double mediaAlturas = sumaAlturas / Prisoners.size();
 		double mediaAmenazas = sumaAmenazas / Prisoners.size();
 		double mediaEdades = sumaEdades / Prisoners.size();
+		double porcentajeVisitas = (sumaVisitas / Prisoners.size()) * 100;
+		double porcentajeLlamadas = (sumaLlamadas / Prisoners.size()) * 100;
+
 		String s = "\nMedia de alturas de los presos: " + numberFormat.format(mediaAlturas) + " cm"
-				+ "\nMedia de niveles de amenaza de los presos: " + numberFormat.format(mediaAmenazas)
-				+ "\nMedia de edades de los presos: " + numberFormat.format(mediaEdades) + " años";
+				+ "\r\nMedia de niveles de amenaza de los presos: " + numberFormat.format(mediaAmenazas) + " sobre 5"
+				+ "\r\nMedia de edades de los presos: " + numberFormat.format(mediaEdades) + " años"
+				+ "\r\nPorcentaje de presos con permiso de visitas: " + numberFormat.format(porcentajeVisitas) + "%"
+				+ "\r\nPorcentaje de presos con permiso de llamadas: " + numberFormat.format(porcentajeLlamadas) + "%";
 		return s;
 	}
 }

@@ -96,6 +96,7 @@ public class Gestor {
 		Gestor m = new Gestor();
 		Scanner read = new Scanner(System.in);
 		boolean power = false;
+		int loaded = 0;
 		int ret = -1; // Rematar login con if else power , duplicar todo el codigo de la opcion 1 en
 						// el else
 		m.JsonToHashPab("prisondb");
@@ -105,6 +106,23 @@ public class Gestor {
 			ret = m.login();
 			if (ret == 1) {
 				power = true;
+				while (loaded == 0) {
+					System.out.println("Do you want to load the main database(1) or the backup files(2)?");
+					int load = read.nextInt();
+					if (load == 1) {
+						m.JsonToHashPab("prisondb");
+						m.JsonToHashCS("civilservants");
+						m.JsonToHashV("visitors");
+						loaded = 1;
+					} else if (load == 2) {
+						m.JsonToHashPab("prisondbBackup");
+						m.JsonToHashCS("civilservantsBackup");
+						m.JsonToHashV("visitorsBackup");
+						loaded = 1;
+					} else {
+						System.out.println("That is not a valid option.");
+					}
+				}
 				do {
 					m.setBack(false);
 					menu.menuPrincipal();
@@ -117,6 +135,14 @@ public class Gestor {
 							m.HashToJson(0, "prisondb");
 							m.HashToJson(1, "civilservants");
 							m.HashToJson(2, "visitors");
+						}
+						System.out.println("Do you want to update the backup copy?(1=yes, 0=no)");
+						int backup = read.nextInt();
+						if (backup == 1) {
+							m.HashToJson(0, "prisondbBackup");
+							m.HashToJson(1, "civilservantsBackup");
+							m.HashToJson(2, "visitorsBackup");
+							System.out.println("Changes saved.");
 						}
 						System.out.println("\n\nThank you for using our application");
 						break;
@@ -151,7 +177,20 @@ public class Gestor {
 										pIO.realizarConsulta(m.getPrisoners());
 										break;
 									case 7:
-										System.out.println(pIO.stats(m.getPrisoners()));
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(pIO.stats(m.getPrisoners()));
+										} else if (a == 2) {
+											System.out.println(pIO.stats(m.getPrisoners()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, pIO.stats(m.getPrisoners()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -183,7 +222,20 @@ public class Gestor {
 										csIO.realizarConsulta(m.getCivilServants());
 										break;
 									case 7:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(csIO.stats(m.getCivilServants()));
+										} else if (a == 2) {
+											System.out.println(csIO.stats(m.getCivilServants()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, csIO.stats(m.getCivilServants()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -215,7 +267,20 @@ public class Gestor {
 										vIO.realizarConsulta(m.getVisitors());
 										break;
 									case 7:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(vIO.stats(m.getVisitors()));
+										} else if (a == 2) {
+											System.out.println(vIO.stats(m.getVisitors()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, vIO.stats(m.getVisitors()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -245,7 +310,20 @@ public class Gestor {
 										cIO.realizarConsulta(m.getCells());
 										break;
 									case 7:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(cIO.stats(m.getCells()));
+										} else if (a == 2) {
+											System.out.println(cIO.stats(m.getCells()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, cIO.stats(m.getCells()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -272,7 +350,20 @@ public class Gestor {
 										paIO.borrar(m.getPavilions());
 										break;
 									case 6:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(paIO.stats(m.getPavilions()));
+										} else if (a == 2) {
+											System.out.println(paIO.stats(m.getPavilions()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, paIO.stats(m.getPavilions()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -343,14 +434,43 @@ public class Gestor {
 						m.sendEmail(adress, subj, flname, fltype);
 						m.setBack(true);
 						break;
+					case 5:
+						System.out.println("Are you sure you want to save changes?(1=yes, 0=no)");
+						int saf = read.nextInt();
+						if (saf == 1) {
+							m.HashToJson(0, "prisondb");
+							m.HashToJson(1, "civilservants");
+							m.HashToJson(2, "visitors");
+							System.out.println("Changes saved.");
+						}
+						m.setBack(true);
+						break;
 					default:
 						System.out.println("That is not a valid option");
 						m.setBack(true);
 						break;
 					}
+					System.out.println("\n\n_____________________________________________________\n\n");
 				} while (m.isBack());
 			} else if(ret == 0) {
 				power = false;
+				while (loaded == 0) {
+					System.out.println("Do you want to load the main database(1) or the backup files(2)?");
+					int load = read.nextInt();
+					if (load == 1) {
+						m.JsonToHashPab("prisondb");
+						m.JsonToHashCS("civilservants");
+						m.JsonToHashV("visitors");
+						loaded = 1;
+					} else if (load == 2) {
+						m.JsonToHashPab("prisondbBackup");
+						m.JsonToHashCS("civilservantsBackup");
+						m.JsonToHashV("visitorsBackup");
+						loaded = 1;
+					} else {
+						System.out.println("That is not a valid option.");
+					}
+				}
 				do {
 					m.setBack(false);
 					menu.menuBasic();
@@ -363,6 +483,14 @@ public class Gestor {
 							m.HashToJson(0, "prisondb");
 							m.HashToJson(1, "civilservants");
 							m.HashToJson(2, "visitors");
+						}
+						System.out.println("Do you want to update the backup copy?(1=yes, 0=no)");
+						int backup = read.nextInt();
+						if (backup == 1) {
+							m.HashToJson(0, "prisondbBackup");
+							m.HashToJson(1, "civilservantsBackup");
+							m.HashToJson(2, "visitorsBackup");
+							System.out.println("Changes saved.");
 						}
 						System.out.println("\n\nThank you for using our application");
 						break;
@@ -397,7 +525,20 @@ public class Gestor {
 										pIO.realizarConsulta(m.getPrisoners());
 										break;
 									case 7:
-										System.out.println(pIO.stats(m.getPrisoners()));
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(pIO.stats(m.getPrisoners()));
+										} else if (a == 2) {
+											System.out.println(pIO.stats(m.getPrisoners()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, pIO.stats(m.getPrisoners()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -429,7 +570,20 @@ public class Gestor {
 										csIO.realizarConsulta(m.getCivilServants());
 										break;
 									case 7:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(csIO.stats(m.getCivilServants()));
+										} else if (a == 2) {
+											System.out.println(csIO.stats(m.getCivilServants()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, csIO.stats(m.getCivilServants()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -461,7 +615,20 @@ public class Gestor {
 										vIO.realizarConsulta(m.getVisitors());
 										break;
 									case 7:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(vIO.stats(m.getVisitors()));
+										} else if (a == 2) {
+											System.out.println(vIO.stats(m.getVisitors()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, vIO.stats(m.getVisitors()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -491,7 +658,20 @@ public class Gestor {
 										cIO.realizarConsulta(m.getCells());
 										break;
 									case 7:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(cIO.stats(m.getCells()));
+										} else if (a == 2) {
+											System.out.println(cIO.stats(m.getCells()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, cIO.stats(m.getCells()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -518,7 +698,20 @@ public class Gestor {
 										paIO.borrar(m.getPavilions());
 										break;
 									case 6:
-										// System.out.println(pIO.stats(m.getPrisoners())); por hacer
+										System.out.println(
+												"Do you want to visualize(1) or visualize and export as text file(2)?");
+										int a = read.nextInt();
+										read.nextLine();
+										if (a == 1) {
+											System.out.println(paIO.stats(m.getPavilions()));
+										} else if (a == 2) {
+											System.out.println(paIO.stats(m.getPavilions()));
+											System.out.println("Insert the name of the file: ");
+											String n = read.nextLine();
+											m.saveTxt(n, paIO.stats(m.getPavilions()));
+										} else {
+											System.out.println("That is not a valid option.");
+										}
 										break;
 									case 0:
 										volver = true;
@@ -533,11 +726,23 @@ public class Gestor {
 							} while (!volver);
 						} while (volver && !m.isBack());
 						break;
+					case 2:
+						System.out.println("Are you sure you want to save changes?(1=yes, 0=no)");
+						int saf = read.nextInt();
+						if (saf == 1) {
+							m.HashToJson(0, "prisondb");
+							m.HashToJson(1, "civilservants");
+							m.HashToJson(2, "visitors");
+							System.out.println("Changes saved.");
+						}
+						m.setBack(true);
+						break;
 					default:
 						System.out.println("That is not a valid option");
 						m.setBack(true);
 						break;
 					}
+					System.out.println("\n\n_____________________________________________________\n\n");
 				} while (m.isBack());
 			}
 		}
@@ -700,6 +905,11 @@ public class Gestor {
 
 			JSONObject jsonObject = (JSONObject) obj;
 			Scanner sceng = new Scanner(System.in);
+			System.out.println("+-----------------------------------+");
+			System.out.println("|       Please introduce your       |");
+			System.out.println("|       username and password       |");
+			System.out.println("|             to log in             |");
+			System.out.println("+-----------------------------------+");
 			System.out.println("\nInsert user: ");
 			String us = sceng.nextLine();
 			if (jsonObject.containsKey(us)) {
@@ -710,11 +920,11 @@ public class Gestor {
 				String power = (String) obj2.get("PowerUser");
 				if (passtest.equals(passw) && power.equals("True")) {
 					System.out.println("\nCorrect Login");
-
+					System.out.println("\n\n_____________________________________________________\n\n");
 					return 1;
 				} else if (passtest.equals(passw) && power.equals("False")) {
 					System.out.println("\nCorrect Login");
-
+					System.out.println("\n\n_____________________________________________________\n\n");
 					return 0;
 				}
 			}
@@ -722,7 +932,8 @@ public class Gestor {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("\nError login try again");
+		System.out.println("\nError,the name or the password you have introduced might be wrong. Please try again");
+		System.out.println("\n\n_____________________________________________________\n\n");
 		return -1;
 
 	}
@@ -772,6 +983,18 @@ public class Gestor {
 			System.out.println("Done");
 
 		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveTxt(String name, String text) {
+		try {
+			FileWriter file = new FileWriter("src/" + name + ".txt");
+			file.write(text);
+			file.flush();
+			file.close();
+			System.out.println("\nYour file have been saved.");
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

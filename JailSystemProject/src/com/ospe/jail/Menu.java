@@ -15,7 +15,18 @@ public class Menu {
 		System.out.println("5) Save changes");
 		System.out.println("0) Exit");
 	}
-
+	
+	public void menuBasic() {
+		System.out.println("+-----------------------------------+");
+		System.out.println("|       Welcome to Jail System      |");
+		System.out.println("|        Security Project App       |");
+		System.out.println("+-----------------------------------+");
+		System.out.println("\nPlease make a selection: ");
+		System.out.println("\n1) Register Management");
+		System.out.println("2) Save changes");
+		System.out.println("0) Exit");
+	}
+	
 	public void seleccionTipoDato() {
 		System.out.println("\n\n_____________________________________________________\n\n");
 		System.out.println("\nSelect the data type you want to work with: ");

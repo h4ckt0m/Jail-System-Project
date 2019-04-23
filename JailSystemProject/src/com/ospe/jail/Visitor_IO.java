@@ -1,6 +1,7 @@
 package com.ospe.jail;
 
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -8,8 +9,9 @@ import java.util.Scanner;
 public class Visitor_IO {
 
 	Scanner read = new Scanner(System.in);
+	DecimalFormat numberFormat = new DecimalFormat("#.##");
 	public static final int YEAR = 2019;
-	
+
 	public void leer(HashMap<String, Visitor> Visitors) {
 		System.out.println("\nInsert visitor Id: ");
 		String id = read.nextLine();
@@ -21,13 +23,13 @@ public class Visitor_IO {
 		}
 
 	}
-	
+
 	public void leerListado(HashMap<String, Visitor> Visitors) {
-        for (Visitor v : Visitors.values()) {
-            System.out.print(v.getId_visitor() + ", " + v.getNombre() + " " + v.getApellidos() + "\n");
-        }
-    }
-	
+		for (Visitor v : Visitors.values()) {
+			System.out.print(v.getId_visitor() + ", " + v.getNombre() + " " + v.getApellidos() + "\n");
+		}
+	}
+
 	public void crear(HashMap<String, Visitor> Visitors) {
 		Visitor v = new Visitor();
 		System.out.println("\nInsert new visitor DNI: ");
@@ -55,9 +57,9 @@ public class Visitor_IO {
 		v.setPeso(read.nextDouble());
 
 		System.out.println("\nInsert new visitor Id: ");
-		v.setId_visitor(read.nextLine());;
+		v.setId_visitor(read.nextLine());
 
-		System.out.println("\nInsert new visitor's prisoner: ");
+		System.out.println("\nInsert new visitor's prisoner number: ");
 		v.setPreso_visitado(read.nextInt());
 
 		System.out.println("\nInsert new visitor date (year/month/day): ");
@@ -66,18 +68,39 @@ public class Visitor_IO {
 		System.out.println("\nInsert new visitor's visit hour : ");
 		v.setHora_visita(read.nextLine());
 
-		System.out.println("\nInsert new visitor's relation with the prisoner: ");
-		v.setRelacion_preso(read.nextLine());
-		
+		System.out.println("\nInsert new visitor's relation with the prisoner: " + "\n1)Familiar" + "\n2)Pareja"
+				+ "\n3)Amigo" + "\n4)Abogado" + "\n5)Agente policial");
+		int choice = read.nextInt();
+		switch (choice) {
+		case 1:
+			v.setRelacion_preso("familiar");
+			break;
+		case 2:
+			v.setRelacion_preso("pareja");
+			break;
+		case 3:
+			v.setRelacion_preso("amigo");
+			break;
+		case 4:
+			v.setRelacion_preso("abogado");
+			break;
+		case 5:
+			v.setRelacion_preso("agente policial");
+			break;
+		default:
+			System.out.println("\nThat is not a valid option");
+			break;
+		}
+
 		System.out.println("\nInsert new number of visitors: ");
 		v.setNumero_visitantes(read.nextInt());
-		
+
 		System.out.println("\nInsert new visitor applicant: ");
 		v.setSolicitante_visita(read.nextLine());
 
 		Visitors.put(v.getId_visitor(), v);
 	}
-	
+
 	public void editar(HashMap<String, Visitor> Visitors) {
 		Visitor v = new Visitor();
 		System.out.println("\nInsert Id of the visitor you want to edit: ");
@@ -86,8 +109,8 @@ public class Visitor_IO {
 			v = Visitors.get(id);
 			System.out.println("\nWhich field would you like to change?" + "\nPlease make a selection:\n" + "\n1.DNI"
 					+ "\n2.Nombre" + "\n3.Apellidos" + "\n4.Fecha de nacimiento" + "\n5.Nacionalidad" + "\n6.Sexo"
-					+ "\n7.Altura" + "\n8.Peso" + "\n9.Id visitante" + "\n10.Preso visitado"
-					+ "\n11.Fecha de visita" + "\n12.Hora de visita" + "\n13.Relacion con el preso" + "\n14.Numero de visitantes"
+					+ "\n7.Altura" + "\n8.Peso" + "\n9.Id visitante" + "\n10.Preso visitado" + "\n11.Fecha de visita"
+					+ "\n12.Hora de visita" + "\n13.Relacion con el preso" + "\n14.Numero de visitantes"
 					+ "\n15.Solicitante de la visita" + "\n0.Exit");
 			int choice = read.nextInt();
 			read.nextLine();
@@ -130,6 +153,10 @@ public class Visitor_IO {
 			case 9:
 				System.out.println("\nInsert visitor's new Id: ");
 				v.setId_visitor(read.nextLine());
+				Visitors.remove(id);// aunque de normal se reescribe, si cambia el id de funcionario quedarian los
+				// dos, asi
+				// que hay que borrar el antiguo
+				Visitors.put(v.getId_visitor(), v);
 				break;
 			case 10:
 				System.out.println("\nInsert visitor's new prisoner visited: ");
@@ -159,15 +186,12 @@ public class Visitor_IO {
 				System.out.println("That is not a valid selection.");
 				break;
 			}
-			Visitors.remove(id);// aunque de normal se reescribe, si cambia el id de funcionario quedarian los dos, asi
-									// que hay que borrar el antiguo
-			Visitors.put(v.getId_visitor(), v);
 		} else {
 			System.out.println("There is no visitor registered with that Id.");
 		}
 
 	}
-	
+
 	public int[] getTheDate(String s) {
 		int[] date = new int[3];
 		String dayS = Character.toString(s.charAt(0)) + Character.toString(s.charAt(1));
@@ -184,7 +208,7 @@ public class Visitor_IO {
 
 		return date;
 	}
-	
+
 	public void borrar(HashMap<String, Visitor> Visitors) {
 		System.out.println("\nInsert id of the visitor you want to delete: ");
 		String id = read.nextLine();
@@ -195,7 +219,7 @@ public class Visitor_IO {
 			System.out.println("There is no visitor with that Id");
 		}
 	}
-	
+
 	public void realizarConsulta(HashMap<String, Visitor> Visitors) {
 
 		HashMap<String, Visitor> Query = new HashMap<String, Visitor>(Visitors);
@@ -205,10 +229,11 @@ public class Visitor_IO {
 			try {
 				System.out.println("\nIn which field would you like to put the restriction?"
 						+ "\nPlease make a selection:\n" + "\n1.Search by DNI" + "\n2.Search by name"
-						+ "\n3.Search by age" + "\n4.Search by nationality" + "\n5.Search by sex" + "\n6.Search by height"
-						+ "\n7.Search by weight" + "\n8.Search by visitor Id" + "\n9.Search by prisoner visited"
-						+ "\n10.Search by visit date" + "\n11.Search by visit hour" + "\n12.Search by relation with the prisoner" + "\n13.Search by number of visitors"
-						+ "\n14.Search by visit applicant" + "\n0.Exit");
+						+ "\n3.Search by age" + "\n4.Search by nationality" + "\n5.Search by height"
+						+ "\n6.Search by weight" + "\n7.Search by visitor Id" + "\n8.Search by prisoner visited"
+						+ "\n9.Search by visit date" + "\n10.Search by visit hour"
+						+ "\n11.Search by relation with the prisoner" + "\n12.Search by number of visitors"
+						+ "\n13.Search by visit applicant" + "\n0.Exit");
 				int choice = read.nextInt();
 				read.nextLine();
 				switch (choice) {
@@ -256,15 +281,6 @@ public class Visitor_IO {
 					}
 					break;
 				case 5:
-					System.out.println("\nInsert sex(h/m): ");
-					String sex = read.nextLine();
-					for (Visitor v : Query.values()) {
-						if (!v.getSexo().equals(sex)) {
-							deleteos.add(v.getId_visitor());
-						}
-					}
-					break;
-				case 6:
 					System.out.println("\nInsert minimum height(cm): ");
 					int minHeight = read.nextInt();
 					System.out.println("\nInsert maximum height(cm): ");
@@ -275,7 +291,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 7:
+				case 6:
 					System.out.println("\nInsert minimum weight(kg): ");
 					String minW = read.nextLine();
 					System.out.println("\nInsert maximum weight(kg): ");
@@ -288,7 +304,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 8:
+				case 7:
 					System.out.println("\nInsert Id visitor: ");
 					String idv = read.nextLine();
 					for (Visitor v : Query.values()) {
@@ -297,7 +313,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 9:
+				case 8:
 					System.out.println("\nInsert prisoner visited: ");
 					int prv = read.nextInt();
 					for (Visitor v : Query.values()) {
@@ -306,7 +322,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 10:
+				case 9:
 					System.out.println("\nInsert minimum visit month: ");
 					int minMonth = read.nextInt();
 					System.out.println("\nInsert maximum visit month: ");
@@ -319,7 +335,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 11:
+				case 10:
 					System.out.println("\nInsert minimum visit hour: ");
 					int minHour = read.nextInt();
 					System.out.println("\nInsert maximum visit hour: ");
@@ -332,9 +348,8 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 12:
+				case 11:
 					System.out.println("\nInsert relation with the prisoner: ");
-					System.out.println("\nOptions: familiar, abogado, agente policial, amigo o pareja");
 					String rep = read.nextLine();
 					for (Visitor v : Query.values()) {
 						if (!v.getRelacion_preso().equals(rep)) {
@@ -342,7 +357,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 13:
+				case 12:
 					System.out.println("\nInsert number of visitors: ");
 					int numv = read.nextInt();
 					for (Visitor v : Query.values()) {
@@ -351,7 +366,7 @@ public class Visitor_IO {
 						}
 					}
 					break;
-				case 14:
+				case 13:
 					System.out.println("\nInsert visitor applicant: ");
 					String vapp = read.nextLine();
 					for (Visitor v : Query.values()) {
@@ -376,35 +391,79 @@ public class Visitor_IO {
 
 		}
 
-		System.out.println("Do you like to visulize(1) or visualize and export it to CSV(2)?");
+		System.out.println("Do you like to visulize(1) or visulize and export it to CSV(2)?");
 		int opt = read.nextInt();
 		if (opt == 1) {
 			System.out.println("\n" + Query);
-		}else if (opt == 2) {
+		} else if (opt == 2) {
 			System.out.println("\n" + Query);
-			exportCSV(Query);System.out.println("\nConsulta guardada.");
+			exportCSV(Query);
+			System.out.println("\nConsulta guardada.");
 		}
 	}
-	
+
 	public void exportCSV(HashMap<String, Visitor> query) {
 		read.nextLine();
 		System.out.println("Name your query: ");
 		String nameCSV = read.nextLine();
-        String archCSV = "src/" + nameCSV + ".csv";
-        try {
-            FileWriter writer = new FileWriter(archCSV);
-            writer.write("DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);ID_VISIT;PRESO_VISIT;FECHA_VISIT(dd,mm,aaa);HORA_VISIT(hh,mm,ss);RELACION_PRESO;NUM_VISIT;SOLICITANTE_VISITA\n");
-            for (Visitor v : query.values()) {
-                writer.write(v.toCSV(';'));
-            }
-            writer.flush();
-            writer.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		String archCSV = "src/" + nameCSV + ".csv";
+		try {
+			FileWriter writer = new FileWriter(archCSV);
+			writer.write(
+					"DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);ID_VISIT;PRESO_VISIT;FECHA_VISIT(dd,mm,aaa);HORA_VISIT(hh,mm,ss);RELACION_PRESO;NUM_VISIT;SOLICITANTE_VISITA\n");
+			for (Visitor v : query.values()) {
+				writer.write(v.toCSV(';'));
+			}
+			writer.flush();
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-    }
-	
-	
-	
+	}
+
+	public String stats(HashMap<String, Visitor> Visitors) {
+		double sumaVisitantes = 0;
+		double sumaEdades = 0;
+		double sumaFamilia = 0;
+		double sumaPareja = 0;
+		double sumaAmigo = 0;
+		double sumaAbogado = 0;
+		double sumaAgente = 0;
+		for (Visitor v : Visitors.values()) {
+			sumaVisitantes = sumaVisitantes + v.getNumero_visitantes();
+			sumaEdades = sumaEdades + (YEAR - (getTheDate(v.getF_nac())[2]));
+			if (v.getRelacion_preso().equals("familiar")) {
+				sumaFamilia = sumaFamilia + 1;
+			}
+			if (v.getRelacion_preso().equals("pareja")) {
+				sumaPareja = sumaPareja + 1;
+			}
+			if (v.getRelacion_preso().equals("amigo")) {
+				sumaAmigo = sumaAmigo + 1;
+			}
+			if (v.getRelacion_preso().equals("abogado")) {
+				sumaAbogado = sumaAbogado + 1;
+			}
+			if (v.getRelacion_preso().equals("agente policial")) {
+				sumaAgente = sumaAgente + 1;
+			}
+		}
+		double mediaVisitantes = sumaVisitantes / Visitors.size();
+		double mediaEdades = sumaEdades / Visitors.size();
+		double porcentajeFamilia = (sumaFamilia / Visitors.size()) * 100;
+		double porcentajePareja = (sumaPareja / Visitors.size()) * 100;
+		double porcentajeAmigo = (sumaAmigo / Visitors.size()) * 100;
+		double porcentajeAbogado = (sumaAbogado / Visitors.size()) * 100;
+		double porcentajeAgente = (sumaAgente / Visitors.size()) * 100;
+
+		String s = "\nMedia de visitantes por solicitud: " + numberFormat.format(mediaVisitantes) + " visitantes"
+				+ "\r\nMedia de edades de los solicitantes: " + numberFormat.format(mediaEdades) + " años"
+				+ "\r\nPorcentaje de solicitantes familiares: " + numberFormat.format(porcentajeFamilia) + "%"
+				+ "\r\nPorcentaje de solicitantes parejas: " + numberFormat.format(porcentajePareja) + "%"
+				+ "\r\nPorcentaje de solicitantes amigos: " + numberFormat.format(porcentajeAmigo) + "%"
+				+ "\r\nPorcentaje de solicitantes abogados: " + numberFormat.format(porcentajeAbogado) + "%"
+				+ "\r\nPorcentaje de solicitantes agentes policiales: " + numberFormat.format(porcentajeAgente) + "%";
+		return s;
+	}
 }

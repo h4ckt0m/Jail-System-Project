@@ -1,6 +1,7 @@
 package com.ospe.jail;
 
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -8,8 +9,9 @@ import java.util.Scanner;
 public class CivilServant_IO {
 
 	Scanner read = new Scanner(System.in);
+	DecimalFormat numberFormat = new DecimalFormat("#.##");
 	public static final int YEAR = 2019;
-	
+
 	public void leer(HashMap<String, CivilServant> CivilServants) {
 		System.out.println("\nInsert civil servant Id: ");
 		String id = read.nextLine();
@@ -21,14 +23,13 @@ public class CivilServant_IO {
 		}
 
 	}
-	
-	
+
 	public void leerListado(HashMap<String, CivilServant> CivilServants) {
-        for (CivilServant cs : CivilServants.values()) {
-            System.out.print(cs.getId_funcionario() + ", " + cs.getNombre() + " " + cs.getApellidos() + "\n");
-        }
-    }
-	
+		for (CivilServant cs : CivilServants.values()) {
+			System.out.print(cs.getId_funcionario() + ", " + cs.getNombre() + " " + cs.getApellidos() + "\n");
+		}
+	}
+
 	public void crear(HashMap<String, CivilServant> CivilServants) {
 		CivilServant cs = new CivilServant();
 		System.out.println("\nInsert new civil servant DNI: ");
@@ -72,8 +73,7 @@ public class CivilServant_IO {
 
 		CivilServants.put(cs.getId_funcionario(), cs);
 	}
-	
-	
+
 	public void editar(HashMap<String, CivilServant> CivilServants) {
 		CivilServant cs = new CivilServant();
 		System.out.println("\nInsert Id of the civil servant you want to edit: ");
@@ -82,9 +82,8 @@ public class CivilServant_IO {
 			cs = CivilServants.get(id);
 			System.out.println("\nWhich field would you like to change?" + "\nPlease make a selection:\n" + "\n1.DNI"
 					+ "\n2.Nombre" + "\n3.Apellidos" + "\n4.Fecha de nacimiento" + "\n5.Nacionalidad" + "\n6.Sexo"
-					+ "\n7.Altura" + "\n8.Peso" + "\n9.Id funcionario" + "\n10.Sueldo"
-					+ "\n11.Cargo" + "\n12.Pabellon asignado" + "\n13.Turno"
-					+ "\n0.Exit");
+					+ "\n7.Altura" + "\n8.Peso" + "\n9.Id funcionario" + "\n10.Sueldo" + "\n11.Cargo"
+					+ "\n12.Pabellon asignado" + "\n13.Turno" + "\n0.Exit");
 			int choice = read.nextInt();
 			read.nextLine();
 			switch (choice) {
@@ -126,6 +125,10 @@ public class CivilServant_IO {
 			case 9:
 				System.out.println("\nInsert civil servant's new Id: ");
 				cs.setId_funcionario(read.nextLine());
+				CivilServants.remove(id);// aunque de normal se reescribe, si cambia el id de funcionario quedarian los
+											// dos, asi
+				// que hay que borrar el antiguo
+				CivilServants.put(cs.getId_funcionario(), cs);
 				break;
 			case 10:
 				System.out.println("\nInsert civil servant's new salary: ");
@@ -147,15 +150,12 @@ public class CivilServant_IO {
 				System.out.println("That is not a valid selection.");
 				break;
 			}
-			CivilServants.remove(id);// aunque de normal se reescribe, si cambia el id de funcionario quedarian los dos, asi
-									// que hay que borrar el antiguo
-			CivilServants.put(cs.getId_funcionario(), cs);
 		} else {
 			System.out.println("There is no civil servant registered with that Id.");
 		}
 
 	}
-	
+
 	public int[] getTheDate(String s) {
 		int[] date = new int[3];
 		String dayS = Character.toString(s.charAt(0)) + Character.toString(s.charAt(1));
@@ -172,7 +172,7 @@ public class CivilServant_IO {
 
 		return date;
 	}
-	
+
 	public void borrar(HashMap<String, CivilServant> CivilServants) {
 		System.out.println("\nInsert id of the civil servant you want to delete: ");
 		String id = read.nextLine();
@@ -183,7 +183,7 @@ public class CivilServant_IO {
 			System.out.println("There is no civil servant with that Id");
 		}
 	}
-	
+
 	public void realizarConsulta(HashMap<String, CivilServant> CivilServants) {
 
 		HashMap<String, CivilServant> Query = new HashMap<String, CivilServant>(CivilServants);
@@ -194,9 +194,8 @@ public class CivilServant_IO {
 				System.out.println("\nIn which field would you like to put the restriction?"
 						+ "\nPlease make a selection:\n" + "\n1.Search by DNI" + "\n2.Search by name"
 						+ "\n3.Search by age" + "\n4.Search by nationality" + "\n5.Search by height"
-						+ "\n6.Search by weight" + "\n7.Search by salary"
-						+ "\n8.Search by position" + "\n9.Search by pavilion"
-						+ "\n10.Search by shift" + "\n0.Exit");
+						+ "\n6.Search by weight" + "\n7.Search by salary" + "\n8.Search by position"
+						+ "\n9.Search by pavilion" + "\n10.Search by shift" + "\n0.Exit");
 				int choice = read.nextInt();
 				read.nextLine();
 				switch (choice) {
@@ -288,7 +287,7 @@ public class CivilServant_IO {
 					}
 					break;
 				case 9:
-					System.out.println("\nInsert position: ");
+					System.out.println("\nInsert pavilion: ");
 					int pav = read.nextInt();
 					for (CivilServant cs : Query.values()) {
 						if (cs.getPavilion_func() != pav) {
@@ -325,29 +324,63 @@ public class CivilServant_IO {
 		int opt = read.nextInt();
 		if (opt == 1) {
 			System.out.println("\n" + Query);
-		}else if (opt == 2) {
+		} else if (opt == 2) {
 			System.out.println("\n" + Query);
-			exportCSV(Query);System.out.println("\nConsulta guardada.");
+			exportCSV(Query);
+			System.out.println("\nConsulta guardada.");
 		}
 	}
-	
+
 	public void exportCSV(HashMap<String, CivilServant> query) {
 		read.nextLine();
 		System.out.println("Name your query: ");
 		String nameCSV = read.nextLine();
-        String archCSV = "src/" + nameCSV + ".csv";
-        try {
-            FileWriter writer = new FileWriter(archCSV);
-            writer.write("DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);CARGO;ID_FUNC;SUELDO;PABELLON;TURNO\n");
-            for (CivilServant cs : query.values()) {
-                writer.write(cs.toCSV(';'));
-            }
-            writer.flush();
-            writer.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		String archCSV = "src/" + nameCSV + ".csv";
+		try {
+			FileWriter writer = new FileWriter(archCSV);
+			writer.write(
+					"DNI;NOMBRE;APELLIDOS;F_NAC;NACIONALIDAD;SEXO;ALTURA(cm);PESO(kg);CARGO;ID_FUNC;SUELDO;PABELLON;TURNO\n");
+			for (CivilServant cs : query.values()) {
+				writer.write(cs.toCSV(';'));
+			}
+			writer.flush();
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-    }
+	}
+	public String stats(HashMap<String, CivilServant> CivilServants) {
+		double sumaAlturas = 0;
+		double sumaEdades = 0;
+		double sumaMorning = 0;
+		double sumaTarde = 0;
+		double sumaNoche = 0;
+		for (CivilServant cs : CivilServants.values()) {
+			sumaAlturas = sumaAlturas + cs.getAltura();
+			sumaEdades = sumaEdades + (YEAR - (getTheDate(cs.getF_nac())[2]));
+			if (cs.getTurno().equals("mañana")) {
+				sumaMorning = sumaMorning + 1;
+			}
+			if (cs.getTurno().equals("tarde")) {
+				sumaTarde = sumaTarde + 1;
+			}
+			if (cs.getTurno().equals("noche")) {
+				sumaNoche = sumaNoche + 1;
+			}
+		}
+		double mediaAlturas = sumaAlturas / CivilServants.size();
+		double mediaEdades = sumaEdades / CivilServants.size();
+		double porcentajeMorning = (sumaMorning/CivilServants.size())*100;
+		double porcentajeTarde = (sumaTarde/CivilServants.size())*100;
+		double porcentajeNoche = (sumaNoche/CivilServants.size())*100;
+		
+		String s = "\nMedia de alturas de los funcionarios: " + numberFormat.format(mediaAlturas) + " cm"
+				+ "\r\nMedia de edades de los funcionarios: " + numberFormat.format(mediaEdades) + " años"
+				+ "\r\nPorcentaje de funcionarios con turno de mañana: "+numberFormat.format(porcentajeMorning)+"%"
+				+ "\r\nPorcentaje de funcionarios con turno de tarde: "+numberFormat.format(porcentajeTarde)+"%"
+				+ "\r\nPorcentaje de funcionarios con turno de noche: "+numberFormat.format(porcentajeNoche)+"%";
+		return s;
+	}
 	
 }

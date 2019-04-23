@@ -2,11 +2,13 @@ package com.ospe.jail;
 
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Cell_IO {
-	static Scanner read = new Scanner(System.in);
+	Scanner read = new Scanner(System.in);
+	DecimalFormat numberFormat = new DecimalFormat("#.##");
 	public static final int YEAR = 2019;
 
 	public void leer(HashMap<Integer, Cell> Cells) {
@@ -299,5 +301,31 @@ public class Cell_IO {
 			e.printStackTrace();
 		}
 
+	}
+	public String stats(HashMap<Integer, Cell> cells) {
+		double sumaCapacidades = 0;
+		double sumaSeguridad = 0;
+		double sumaLlenas = 0;
+		double sumaAbiertas = 0;
+		for (Cell c : cells.values()) {
+			sumaCapacidades = sumaCapacidades + c.getCap_actual();
+			sumaSeguridad = sumaSeguridad + c.getNivel_seguridad();
+			if (c.isLlena()) {
+				sumaLlenas = sumaLlenas + 1;
+			}
+			if (c.isEstado_puerta()) {
+				sumaAbiertas = sumaAbiertas + 1;
+			}
+		}
+		double mediaCapacidades = sumaCapacidades / cells.size();
+		double mediaSeguridad = sumaSeguridad / cells.size();
+		double porcentajeLlenas = (sumaLlenas/cells.size())*100;
+		double porcentajeAbiertas = (sumaAbiertas/cells.size())*100;
+				
+		String s = "\nMedia de capacidades actuales de las celdas: " + numberFormat.format(mediaCapacidades) + " presos por celda"
+				+ "\r\nMedia de niveles de seguridad de las celdas: " + numberFormat.format(mediaSeguridad) + " sobre 5"
+				+ "\r\nPorcentaje de celdas llenas: "+numberFormat.format(porcentajeLlenas)+"%"
+				+ "\r\nPorcentaje de celdas abiertas: "+numberFormat.format(porcentajeAbiertas)+"%";
+		return s;
 	}
 }
