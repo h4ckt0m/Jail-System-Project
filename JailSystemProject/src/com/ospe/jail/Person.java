@@ -1,15 +1,16 @@
 package com.ospe.jail;
+import com.google.gson.annotations.Expose;
 
 public class Person {
 
-	protected String nombre;
-	protected String apellidos;
-	protected String DNI;
-	protected String f_nac;
-	protected String nacionalidad;
-	protected String sexo;
-	protected int altura;
-	protected double peso;
+	@Expose protected String nombre;
+	@Expose protected String apellidos;
+	@Expose protected String DNI;
+	@Expose protected String f_nac;
+	@Expose protected String nacionalidad;
+	@Expose protected String sexo;
+	@Expose protected int altura;
+	@Expose protected double peso;
 
 	// Constructors
 
