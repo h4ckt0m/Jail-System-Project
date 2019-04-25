@@ -1,0 +1,848 @@
+{
+  "1": {
+    "num_celdas": 7,
+    "num_pabellon": 1,
+    "num_guardias": 8,
+    "num_presos": 8,
+    "num_salasComunes": 4,
+    "celdas": [
+      {
+        "cap_actual": 2,
+        "cap_maxima": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 1012,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Doble",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 102,
+            "niv_amenaza": 1,
+            "num_celda": 1012,
+            "condena": "002, 06, 15",
+            "crimen": "Conduccion bajo los efectos del alcohol",
+            "ingreso": "15/01/2018",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Claudio",
+            "apellidos": "Mata Morales",
+            "DNI": "85867717-I",
+            "f_nac": "27/11/1998",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 171,
+            "peso": 71.1
+          },
+          {
+            "num_preso": 153,
+            "niv_amenaza": 1,
+            "num_celda": 1012,
+            "condena": "008, 08, 12",
+            "crimen": "Intento de asesinato",
+            "ingreso": "16/10/2014",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Oscar",
+            "apellidos": "Rico Mendieta",
+            "DNI": "46860790-G",
+            "f_nac": "18/12/1994",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 153,
+            "peso": 105.9
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 1002,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Individual",
+        "piso": 2,
+        "presos": [
+          {
+            "num_preso": 671,
+            "niv_amenaza": 3,
+            "num_celda": 1002,
+            "condena": "020, 06, 22",
+            "crimen": "Posesion de armas sin licencia",
+            "ingreso": "12/10/2013",
+            "visitas": false,
+            "llamadas": false,
+            "nombre": "Zoro",
+            "apellidos": "Roronoa Izuku",
+            "DNI": "66350281-L",
+            "f_nac": "11/11/1994",
+            "nacionalidad": "Japanese",
+            "sexo": "h",
+            "altura": 181,
+            "peso": 86.4
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 1022,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Individual",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 241,
+            "niv_amenaza": 3,
+            "num_celda": 1022,
+            "condena": "006, 11, 05",
+            "crimen": "Trafico de drogas",
+            "ingreso": "02/01/2019",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Pierre",
+            "apellidos": "Feraud Dumont",
+            "DNI": "89541728-I",
+            "f_nac": "11/03/1995",
+            "nacionalidad": "French",
+            "sexo": "h",
+            "altura": 180,
+            "peso": 77.6
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 1072,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Individual",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 898,
+            "niv_amenaza": 2,
+            "num_celda": 1072,
+            "condena": "007, 07, 07",
+            "crimen": "Matar sin licencia",
+            "ingreso": "07/04/2011",
+            "visitas": false,
+            "llamadas": false,
+            "nombre": "James",
+            "apellidos": "Bond",
+            "DNI": "89981564-K",
+            "f_nac": "07/07/1977",
+            "nacionalidad": "British",
+            "sexo": "h",
+            "altura": 188,
+            "peso": 77.7
+          }
+        ]
+      },
+      {
+        "cap_actual": 2,
+        "cap_maxima": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 1033,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Doble",
+        "piso": 2,
+        "presos": [
+          {
+            "num_preso": 371,
+            "niv_amenaza": 1,
+            "num_celda": 1033,
+            "condena": "003, 10, 20",
+            "crimen": "Trafico de drogas",
+            "ingreso": "16/07/2015",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Pablo",
+            "apellidos": "Arroyo Serrano",
+            "DNI": "92434071-H",
+            "f_nac": "23/04/1984",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 186,
+            "peso": 83.5
+          },
+          {
+            "num_preso": 392,
+            "niv_amenaza": 1,
+            "num_celda": 1033,
+            "condena": "005, 10, 28",
+            "crimen": "Conduccion temeraria",
+            "ingreso": "04/10/2016",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Ferran",
+            "apellidos": "Gutierrez Palencia",
+            "DNI": "73535904-Y",
+            "f_nac": "19/01/1996",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 187,
+            "peso": 94.1
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 1087,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Doble",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 199,
+            "niv_amenaza": 1,
+            "num_celda": 1087,
+            "condena": "011, 10, 10",
+            "crimen": "Rebelion",
+            "ingreso": "15/05/2005",
+            "visitas": true,
+            "llamadas": false,
+            "nombre": "Arthur",
+            "apellidos": "May Berguen",
+            "DNI": "92513053-S",
+            "f_nac": "21/12/1955",
+            "nacionalidad": "British",
+            "sexo": "h",
+            "altura": 193,
+            "peso": 123
+          }
+        ]
+      }
+    ]
+  },
+  "2": {
+    "num_celdas": 7,
+    "num_pabellon": 2,
+    "num_guardias": 7,
+    "num_presos": 8,
+    "num_salasComunes": 5,
+    "celdas": [
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 2056,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Doble",
+        "piso": 2,
+        "presos": [
+          {
+            "num_preso": 123,
+            "niv_amenaza": 1,
+            "num_celda": 2056,
+            "condena": "008, 01, 20",
+            "crimen": "Trafico de drogas",
+            "ingreso": "27/01/2017",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Marcelo",
+            "apellidos": "Rebelo de Macao",
+            "DNI": "33283571-H",
+            "f_nac": "16/08/1953",
+            "nacionalidad": "Portuguese",
+            "sexo": "h",
+            "altura": 169,
+            "peso": 90.9
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 2049,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Individual",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 147,
+            "niv_amenaza": 2,
+            "num_celda": 2049,
+            "condena": "002, 03, 15",
+            "crimen": "Posesion de armas sin licencia",
+            "ingreso": "14/06/2018",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Alfonso",
+            "apellidos": "Gutierrez Perez",
+            "DNI": "12568734-A",
+            "f_nac": "05/11/1979",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 175,
+            "peso": 90.5
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 2000,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Individual",
+        "piso": 2,
+        "presos": [
+          {
+            "num_preso": 377,
+            "niv_amenaza": 3,
+            "num_celda": 2000,
+            "condena": "047, 06, 33",
+            "crimen": "Terrorismo",
+            "ingreso": "13/11/2017",
+            "visitas": false,
+            "llamadas": false,
+            "nombre": "Abu",
+            "apellidos": "Al Zarqaui",
+            "DNI": "77993190-Y",
+            "f_nac": "30/10/1966",
+            "nacionalidad": "Jordanian",
+            "sexo": "h",
+            "altura": 185,
+            "peso": 93
+          }
+        ]
+      },
+      {
+        "cap_actual": 2,
+        "cap_maxima": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 2123,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Doble",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 389,
+            "niv_amenaza": 1,
+            "num_celda": 2123,
+            "condena": "002, 02, 10",
+            "crimen": "Homicidio involuntario",
+            "ingreso": "08/07/2018",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Jose",
+            "apellidos": "Lozano Alba",
+            "DNI": "54262610-K",
+            "f_nac": "02/08/1960",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 190,
+            "peso": 100
+          },
+          {
+            "num_preso": 444,
+            "niv_amenaza": 2,
+            "num_celda": 2123,
+            "condena": "012, 06, 14",
+            "crimen": "Abuso de menores",
+            "ingreso": "18/02/2014",
+            "visitas": true,
+            "llamadas": false,
+            "nombre": "Alvaro",
+            "apellidos": "Goldomedo Hernandez",
+            "DNI": "41992470-J",
+            "f_nac": "23/03/1982",
+            "nacionalidad": "American",
+            "sexo": "h",
+            "altura": 165,
+            "peso": 80
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 2048,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Doble",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 698,
+            "niv_amenaza": 3,
+            "num_celda": 2048,
+            "condena": "007, 01, 15",
+            "crimen": "Secuestro aereo",
+            "ingreso": "12/09/2001",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Joseph",
+            "apellidos": "Joestar Springs",
+            "DNI": "28813836-B",
+            "f_nac": "09/04/1970",
+            "nacionalidad": "British",
+            "sexo": "h",
+            "altura": 200,
+            "peso": 91.8
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 2113,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Individual",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 895,
+            "niv_amenaza": 2,
+            "num_celda": 2113,
+            "condena": "005, 11, 25",
+            "crimen": "Quema de libros en biblioteca y colocar comics",
+            "ingreso": "06/06/2006",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Godofredo",
+            "apellidos": "Cataño Marina",
+            "DNI": "61392786-C",
+            "f_nac": "14/11/1968",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 184,
+            "peso": 99.6
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 2006,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Individual",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 897,
+            "niv_amenaza": 1,
+            "num_celda": 2006,
+            "condena": "000, 06, 18",
+            "crimen": "Destruir el entorno publico",
+            "ingreso": "17/03/2019",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Hector",
+            "apellidos": "Martinez Moreno",
+            "DNI": "62317511-H",
+            "f_nac": "25/01/1998",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 195,
+            "peso": 83
+          }
+        ]
+      }
+    ]
+  },
+  "3": {
+    "num_celdas": 6,
+    "num_pabellon": 3,
+    "num_guardias": 9,
+    "num_presos": 8,
+    "num_salasComunes": 3,
+    "celdas": [
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 3037,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Individual",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 183,
+            "niv_amenaza": 3,
+            "num_celda": 3037,
+            "condena": "035, 05, 10",
+            "crimen": "Asesinato",
+            "ingreso": "18/02/2016",
+            "visitas": false,
+            "llamadas": false,
+            "nombre": "Jaime",
+            "apellidos": "Caballero Santos",
+            "DNI": "62426920-Y",
+            "f_nac": "17/06/1983",
+            "nacionalidad": "Mexican",
+            "sexo": "h",
+            "altura": 169,
+            "peso": 62.8
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 3020,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Doble",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 471,
+            "niv_amenaza": 3,
+            "num_celda": 3020,
+            "condena": "010, 02, 00",
+            "crimen": "Atentado contra la monarquia",
+            "ingreso": "11/02/2017",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Sanji",
+            "apellidos": "Vinsmoke",
+            "DNI": "97690551-Y",
+            "f_nac": "02/03/1995",
+            "nacionalidad": "British",
+            "sexo": "h",
+            "altura": 180,
+            "peso": 86
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 3001,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Individual",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 500,
+            "niv_amenaza": 1,
+            "num_celda": 3001,
+            "condena": "006, 02, 20",
+            "crimen": "Homicidio",
+            "ingreso": "08/12/2015",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Ignacio",
+            "apellidos": "Fuentes Cabrera",
+            "DNI": "07162046-F",
+            "f_nac": "07/10/1980",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 170,
+            "peso": 80
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 3067,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Individual",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 581,
+            "niv_amenaza": 1,
+            "num_celda": 3067,
+            "condena": "002, 09, 00",
+            "crimen": "Homicidio imprudente",
+            "ingreso": "30/08/2017",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Chang",
+            "apellidos": "Wang Li",
+            "DNI": "82541594-N",
+            "f_nac": "22/04/1968",
+            "nacionalidad": "Chinese",
+            "sexo": "h",
+            "altura": 169,
+            "peso": 70.1
+          }
+        ]
+      },
+      {
+        "cap_actual": 2,
+        "cap_maxima": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 3021,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Doble",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 634,
+            "niv_amenaza": 2,
+            "num_celda": 3021,
+            "condena": "004, 09, 03",
+            "crimen": "Robo con armas de fuego",
+            "ingreso": "01/08/2005",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Cutty",
+            "apellidos": "Flam Smith",
+            "DNI": "96715986-C",
+            "f_nac": "09/03/1978",
+            "nacionalidad": "American",
+            "sexo": "h",
+            "altura": 220,
+            "peso": 90
+          },
+          {
+            "num_preso": 688,
+            "niv_amenaza": 1,
+            "num_celda": 3021,
+            "condena": "030, 02, 07",
+            "crimen": "Trafico de drogas",
+            "ingreso": "20/04/2007",
+            "visitas": true,
+            "llamadas": false,
+            "nombre": "Diavolo",
+            "apellidos": "Solido Naso",
+            "DNI": "12980596-V",
+            "f_nac": "15/07/1967",
+            "nacionalidad": "Italian",
+            "sexo": "h",
+            "altura": 183,
+            "peso": 80.7
+          }
+        ]
+      },
+      {
+        "cap_actual": 2,
+        "cap_maxima": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 3060,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Doble",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 693,
+            "niv_amenaza": 2,
+            "num_celda": 3060,
+            "condena": "013, 05, 11",
+            "crimen": "Homicidio multiple",
+            "ingreso": "16/05/2012",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Giorno",
+            "apellidos": "Giovanna Buccellati",
+            "DNI": "51658119-G",
+            "f_nac": "19/09/1981",
+            "nacionalidad": "Italian",
+            "sexo": "h",
+            "altura": 186,
+            "peso": 87.8
+          },
+          {
+            "num_preso": 896,
+            "niv_amenaza": 1,
+            "num_celda": 3060,
+            "condena": "005, 00, 10",
+            "crimen": "Llevar identificacion falsa",
+            "ingreso": "15/02/2016",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Santelmo",
+            "apellidos": "Jodrana Rojas",
+            "DNI": "69150825-M",
+            "f_nac": "27/11/1998",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 170,
+            "peso": 70.6
+          }
+        ]
+      }
+    ]
+  },
+  "4": {
+    "num_celdas": 7,
+    "num_pabellon": 4,
+    "num_guardias": 12,
+    "num_presos": 8,
+    "num_salasComunes": 7,
+    "celdas": [
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 4049,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Doble",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 271,
+            "niv_amenaza": 2,
+            "num_celda": 4049,
+            "condena": "010, 02, 14",
+            "crimen": "Atraco a mano armada",
+            "ingreso": "17/03/2006",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Victor",
+            "apellidos": "Baron Rodriguez",
+            "DNI": "63945234-F",
+            "f_nac": "28/07/1991",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 182,
+            "peso": 86.7
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 4110,
+        "nivel_seguridad": 2,
+        "tipo_celda": "Doble",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 623,
+            "niv_amenaza": 1,
+            "num_celda": 4110,
+            "condena": "004, 02, 30",
+            "crimen": "Crimen organizado",
+            "ingreso": "25/09/2016",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Francisco",
+            "apellidos": "de la Hera Garcia",
+            "DNI": "23651802-R",
+            "f_nac": "21/01/1988",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 155,
+            "peso": 63.8
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 2,
+        "llena": false,
+        "estado_puerta": false,
+        "num_celda": 4024,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Doble",
+        "piso": 2,
+        "presos": [
+          {
+            "num_preso": 626,
+            "niv_amenaza": 3,
+            "num_celda": 4024,
+            "condena": "020, 06, 11",
+            "crimen": "Atraco a mano armada",
+            "ingreso": "04/07/2011",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Portgas",
+            "apellidos": "D Rouge",
+            "DNI": "86319657-J",
+            "f_nac": "09/12/1992",
+            "nacionalidad": "Japanese",
+            "sexo": "h",
+            "altura": 194,
+            "peso": 79.8
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 4074,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Individual",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 682,
+            "niv_amenaza": 3,
+            "num_celda": 4074,
+            "condena": "017, 04, 11",
+            "crimen": "Homicidio multiple",
+            "ingreso": "17/07/2000",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Diego",
+            "apellidos": "Brando",
+            "DNI": "87991638-D",
+            "f_nac": "21/03/1976",
+            "nacionalidad": "British",
+            "sexo": "h",
+            "altura": 192,
+            "peso": 87.5
+          }
+        ]
+      },
+      {
+        "cap_actual": 1,
+        "cap_maxima": 1,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 4125,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Individual",
+        "piso": 3,
+        "presos": [
+          {
+            "num_preso": 899,
+            "niv_amenaza": 3,
+            "num_celda": 4125,
+            "condena": "000, 12, 00",
+            "crimen": "Golpear muy fuerte a la autoridad",
+            "ingreso": "03/05/2016",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Mohamed",
+            "apellidos": "Ali",
+            "DNI": "25569717-A",
+            "f_nac": "17/01/1941",
+            "nacionalidad": "American",
+            "sexo": "h",
+            "altura": 191,
+            "peso": 107
+          }
+        ]
+      }
+    ]
+  }
+}
