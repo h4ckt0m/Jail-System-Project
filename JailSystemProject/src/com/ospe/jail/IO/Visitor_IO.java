@@ -1,10 +1,11 @@
-package com.ospe.jail;
+package com.ospe.jail.IO;
 
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import com.ospe.jail.*;
 
 public class Visitor_IO {
 

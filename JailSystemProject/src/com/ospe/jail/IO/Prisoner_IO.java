@@ -1,10 +1,11 @@
-package com.ospe.jail;
+package com.ospe.jail.IO;
 
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import com.ospe.jail.*;
 
 public class Prisoner_IO {
 	Scanner read = new Scanner(System.in);

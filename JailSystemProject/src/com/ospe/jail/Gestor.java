@@ -29,6 +29,7 @@ import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ospe.jail.IO.*;
 
 public class Gestor {
 	private HashMap<Integer, Prisoner> prisoners = new HashMap<Integer, Prisoner>();

@@ -1,6 +1,9 @@
-package com.ospe.jail;
+package com.ospe.jail.IO;
 
 import java.util.Scanner;
+
+import com.ospe.jail.*;
+
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
