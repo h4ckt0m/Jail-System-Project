@@ -19,13 +19,11 @@ Our project is based on a security system of a prision.
 
 ## Members of the project
 
-- **Francisco Afán Rodriguez**     -> *Project Boss*
-- **Héctor Palencia Sánchez**      -> *Coder*
+- **Héctor Palencia Sánchez**      -> *Project Boss & Coder*
 - **Gonzalo Alcaide Agundez**      -> *Coder*
 - **Arturo Alba Sánchez-Mayoral**  -> *Administrator*
 - **Alberto González Fernández**   -> *Administrator*
 
-[<img src="https://avatars1.githubusercontent.com/u/45666661?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/N3oZ3r0)&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="https://avatars3.githubusercontent.com/u/19176760?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/HectorSkm)&nbsp;&nbsp;&nbsp;&nbsp; 
 [<img src="https://avatars0.githubusercontent.com/u/47125167?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/10GGGGGGGGGG)&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="https://avatars0.githubusercontent.com/u/29259992?s=400&v=4" width="100px;"/><sub><b></b></sub>](https://github.com/ArtySaurio)&nbsp;&nbsp;&nbsp;&nbsp;
@@ -59,8 +57,7 @@ We will improve new versions for our project since we achieve version 1.0.
 We hope you like our code. Meaning, if you liked using this app or has helped you in anyway, I'd like you send me an email on <jailsystemproject@gmail.com> about anything you'd want to say about this software. We'd really appreciate it!
 
 ## Our accounts wiht personal repositories
-
-- **[Francisco Afán Rodriguez](https://github.com/N3oZ3r0)**      
+     
 - **[Héctor Palencia Sánchez](https://github.com/HectorSkm)**      
 - **[Arturo Alba Sánchez-Mayoral](https://github.com/ArtySaurio)**  
 - **[Alberto González Fernández](https://github.com/glezon99)**   
