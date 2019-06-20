@@ -1,0 +1,32 @@
+{
+  "d374": {
+    "cargo": "doctor",
+    "id_funcionario": "d374",
+    "sueldo": 1850.6,
+    "pavilion_func": 2,
+    "turno": "tarde",
+    "nombre": "Norisuke",
+    "apellidos": "Higashi Hirose",
+    "DNI": "11609123-B",
+    "f_nac": "23/08/1989",
+    "nacionalidad": "Japanese",
+    "sexo": "h",
+    "altura": 180,
+    "peso": 80.5
+  },
+  "a165": {
+    "cargo": "administrativo",
+    "id_funcionario": "a165",
+    "sueldo": 1300,
+    "pavilion_func": 2,
+    "turno": "mañana",
+    "nombre": "Juan",
+    "apellidos": "Herrera Marquez",
+    "DNI": "54615073-D",
+    "f_nac": "05/05/1943",
+    "nacionalidad": "Spanish",
+    "sexo": "h",
+    "altura": 164,
+    "peso": 72
+  }
+}

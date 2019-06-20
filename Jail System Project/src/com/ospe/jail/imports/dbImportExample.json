@@ -1,0 +1,101 @@
+{
+  "5": {
+    "num_celdas": 2,
+    "num_pabellon": 5,
+    "num_guardias": 8,
+    "num_presos": 4,
+    "num_salasComunes": 3,
+    "celdas": [
+      {
+        "cap_actual": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 5013,
+        "nivel_seguridad": 1,
+        "tipo_celda": "Doble",
+        "piso": 1,
+        "presos": [
+          {
+            "num_preso": 1001,
+            "niv_amenaza": 1,
+            "condena": "002, 06, 15",
+            "crimen": "Conduccion bajo los efectos del alcohol",
+            "ingreso": "15/01/2018",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Sergio",
+            "apellidos": "Mata Perez",
+            "DNI": "85867744-I",
+            "f_nac": "27/11/1964",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 161,
+            "peso": 100.1
+          },
+          {
+            "num_preso": 1002,
+            "niv_amenaza": 1,
+            "condena": "008, 08, 12",
+            "crimen": "Intento de asesinato",
+            "ingreso": "16/10/2014",
+            "visitas": true,
+            "llamadas": true,
+            "nombre": "Juan",
+            "apellidos": "Rico Perez",
+            "DNI": "46860744-G",
+            "f_nac": "18/12/1994",
+            "nacionalidad": "Spanish",
+            "sexo": "h",
+            "altura": 183,
+            "peso": 104.9
+          }
+        ]
+      },
+      {
+        "cap_actual": 2,
+        "llena": true,
+        "estado_puerta": false,
+        "num_celda": 5002,
+        "nivel_seguridad": 3,
+        "tipo_celda": "Doble",
+        "piso": 2,
+        "presos": [
+          {
+            "num_preso": 1003,
+            "niv_amenaza": 3,
+            "condena": "020, 06, 22",
+            "crimen": "Posesion de armas sin licencia",
+            "ingreso": "12/10/2013",
+            "visitas": true,
+            "llamadas": false,
+            "nombre": "Kai",
+            "apellidos": "Roronoa Perez",
+            "DNI": "66350229-L",
+            "f_nac": "11/11/1994",
+            "nacionalidad": "Japanese",
+            "sexo": "h",
+            "altura": 191,
+            "peso": 88.4
+          },
+          {
+            "num_preso": 1004,
+            "niv_amenaza": 3,
+            "condena": "006, 11, 05",
+            "crimen": "Trafico de drogas",
+            "ingreso": "02/01/2019",
+            "visitas": false,
+            "llamadas": true,
+            "nombre": "Francois",
+            "apellidos": "Feraud Perez",
+            "DNI": "89221728-I",
+            "f_nac": "11/03/1995",
+            "nacionalidad": "French",
+            "sexo": "h",
+            "altura": 150,
+            "peso": 55.6
+          }
+        ]
+      }
+    ]
+  }
+}
