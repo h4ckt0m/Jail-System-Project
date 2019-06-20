@@ -3,7 +3,7 @@
 
 <h1 align="center">
   <br>
-  <a href=""><img width=50% src="https://github.com/HectorSkm/ProyectoIngenieria/blob/master/resources/JSP.png" alt="" width="200"></a>
+  <a href=""><img width=50% src="https://github.com/HectorSkm/Jail-System-Project/blob/master/Jail%20System%20Project/resources/JSP.png" alt="" width="200"></a>
   <br>
    Engineering Project 
   <br>
