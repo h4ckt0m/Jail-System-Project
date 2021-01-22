@@ -12,7 +12,7 @@
 ## Description 
 
 Group Project of Computer Engineering students from [Universidad Europea](https://universidadeuropea.es/madrid).
-Our project is based on a security system of a prision.
+Our project is based on a security system of a prison.
 
 :star: Star us on GitHub — it helps!
 
