@@ -1,6 +1,3 @@
-
-
-
 <h1 align="center">
   <br>
   <a href=""><img width=50% src="https://github.com/HectorSkm/Jail-System-Project/blob/master/Jail%20System%20Project/resources/JSP.png" alt="" width="200"></a>
@@ -64,5 +61,4 @@ We hope you like our code. Meaning, if you liked using this app or has helped yo
 - **[Gonzalo Alcaide Agundez](https://github.com/10GGGGGGGGGG)**      
 
 ## Video for UEM PBS Awards, explaining the process and showing the main functionalities of the application:</br>
-https://youtu.be/D5kbf90LC9E
-    
+https://youtu.be/D5kbf90LC9E 
